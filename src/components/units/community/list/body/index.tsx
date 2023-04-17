@@ -1,14 +1,14 @@
-import { ContentsWrapper, TitleWrapper, Wrapper } from "./styles";
+import { ContentsWrapper, Wrapper } from "./styles";
 
 export default function ListBody(): JSX.Element {
   return (
     <Wrapper>
-      <TitleWrapper>
-        <h1>번호</h1>
-        <h1>제목</h1>
-        <h1>작성자</h1>
-        <h1>날짜</h1>
-      </TitleWrapper>
+      <ContentsWrapper>
+        <p>번호</p>
+        <p>제목</p>
+        <p>작성자</p>
+        <p>날짜</p>
+      </ContentsWrapper>
       {new Array(10).fill("").map((_, dex) => (
         <ContentsWrapper key={dex}>
           <p>{dex + 1}</p>
