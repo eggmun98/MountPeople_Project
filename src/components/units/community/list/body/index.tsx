@@ -1,6 +1,7 @@
 import { ContentsWrapper, Wrapper } from "./styles";
+import { IProps } from "./types";
 
-export default function ListBody(): JSX.Element {
+export default function ListBody(props: IProps): JSX.Element {
   return (
     <Wrapper>
       <ContentsWrapper>
@@ -9,12 +10,12 @@ export default function ListBody(): JSX.Element {
         <p>작성자</p>
         <p>날짜</p>
       </ContentsWrapper>
-      {new Array(10).fill("").map((_, dex) => (
+      {props.data?.fetchBoards.map((el, dex) => (
         <ContentsWrapper key={dex}>
           <p>{dex + 1}</p>
-          <p>오늘 같이 등산 가실분</p>
-          <p>문성진</p>
-          <p>2023.04.{dex + 10}</p>
+          <p>{el.title}</p>
+          <p>{el.writer}</p>
+          <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
         </ContentsWrapper>
       ))}
     </Wrapper>
