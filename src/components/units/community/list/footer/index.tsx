@@ -1,14 +1,19 @@
 import { ButtonWrapper, NumberWrapper, Wrapper } from "./styles";
+import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/useQueryFetchBoardCount";
+import Paginations01 from "../../../../commons/paginations01";
 
-export default function ListFooter(): JSX.Element {
+export default function ListFooter(props: {
+  refetch: (params: { page: number }) => void;
+}): JSX.Element {
+  const { data } = useQueryFetchBoarCount();
+
   return (
     <Wrapper>
       <NumberWrapper>
-        <div>{"<"}</div>
-        {new Array(10).fill("").map((el, dex) => (
-          <div key={dex}>{dex + 1} </div>
-        ))}
-        <div>{">"}</div>
+        <Paginations01
+          refetch={props.refetch}
+          count={data?.fetchBoardsCount}
+        ></Paginations01>
       </NumberWrapper>
       <ButtonWrapper>
         <button>게시글 작성하기</button>

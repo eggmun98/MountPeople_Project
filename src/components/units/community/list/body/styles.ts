@@ -36,12 +36,12 @@ export const ContentsWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 10%;
+    width: 15%;
   }
   > p:nth-child(4) {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 15%;
+    justify-content: flex-start;
+    width: 10%;
   }
 `;
