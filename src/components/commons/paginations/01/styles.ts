@@ -5,6 +5,6 @@ interface IProps {
 }
 
 export const Button = styled.div`
-  color: ${(props: IProps) => (props.isActive ? "red" : "black")};
+  color: ${(props: IProps) => (props.isActive ? "#3a6625" : "black")};
   cursor: pointer;
 `;
