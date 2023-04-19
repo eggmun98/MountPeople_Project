@@ -4,7 +4,7 @@ import ListFooter from "./footer";
 import ListHeader from "./header";
 import { Wrapper } from "./styles";
 
-export default function CommunityListUI(): JSX.Element {
+export default function CommunityList(): JSX.Element {
   const { data, refetch } = useQueryFetchBoards();
   return (
     <Wrapper>
