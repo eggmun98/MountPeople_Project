@@ -1,6 +1,7 @@
 import * as W from "./styles";
+import { IProps } from "./types";
 
-export default function WriteBody(): JSX.Element {
+export default function WriteBody(props: IProps): JSX.Element {
   return (
     <W.Wrapper>
       <W.TopWrapper>
@@ -11,7 +12,7 @@ export default function WriteBody(): JSX.Element {
         <input></input>
       </W.InputWrapper01>
       <W.InputWrapper01>
-        <input></input>
+        <input {...props.register("addressDetail")}></input>
       </W.InputWrapper01>
     </W.Wrapper>
   );
