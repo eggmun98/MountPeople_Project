@@ -1,4 +1,4 @@
-import { useQueryFetchBoard } from "../../../../commons/hooks/query/useQueryFetchBoard";
+import { useQueryFetchBoard } from "../../../../commons/hooks/query/community/useQueryFetchBoard";
 import * as D from "./styles";
 
 export default function DetailHeader(): JSX.Element {
