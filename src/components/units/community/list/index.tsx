@@ -1,4 +1,4 @@
-import { useQueryFetchBoards } from "../../../commons/hooks/query/useQueryFetchBoards";
+import { useQueryFetchBoards } from "../../../commons/hooks/query/community/useQueryFetchBoards";
 import ListBody from "./body";
 import ListFooter from "./footer";
 import ListHeader from "./header";

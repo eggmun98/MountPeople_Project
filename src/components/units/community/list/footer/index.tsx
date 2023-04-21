@@ -1,5 +1,5 @@
 import { ButtonWrapper, NumberWrapper, Wrapper } from "./styles";
-import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/useQueryFetchBoardCount";
+import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/community/useQueryFetchBoardCount";
 import Paginations01 from "../../../../commons/paginations/01";
 
 export default function ListFooter(props: {
