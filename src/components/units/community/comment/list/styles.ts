@@ -32,6 +32,29 @@ export const NameWrapper = styled.div`
     font-size: 12px;
     color: #979797;
   }
+  > input {
+    width: 100px;
+    height: 20px;
+    margin-right: 12px;
+    padding: 0 12px;
+    font-size: 12px;
+    border: 1px solid #3a6625;
+    border-radius: 5px;
+    outline-color: #3a6625;
+  }
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    margin-right: 12px;
+    padding: 0 12px;
+    font-size: 12px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    background-color: #d9d9d9;
+  }
 `;
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -62,4 +85,12 @@ export const ButtonWrapper = styled.div`
 
 export const BottomWrapper = styled.div`
   font-size: 14px;
+`;
+
+export const Input01 = styled.input`
+  height: 50px;
+  padding: 0 12px;
+  border: 1px solid #3a6625;
+  border-radius: 5px;
+  outline-color: #3a6625;
 `;
