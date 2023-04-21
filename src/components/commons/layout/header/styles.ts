@@ -27,6 +27,8 @@ export const Logo = styled.img`
   height: 70px;
   object-fit: cover;
   margin: 10px 0;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const MenuWrapper = styled.div`
@@ -35,6 +37,8 @@ export const MenuWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  cursor: pointer;
+  user-select: none;
   > h1 {
     font-size: 24px;
     color: #2f3438;
@@ -58,6 +62,8 @@ export const LoginWrapper = styled.div`
     border-radius: 50px;
     background-color: white;
     color: #3a6625;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: white;
       background-color: #3a6625;
