@@ -1,7 +1,10 @@
+import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 import { ContentsWrapper, Wrapper } from "./styles";
 import { IProps } from "./types";
 
 export default function ListBody(props: IProps): JSX.Element {
+  const { onClickMovePage } = movePageMode();
+
   return (
     <Wrapper>
       <ContentsWrapper>
@@ -11,7 +14,10 @@ export default function ListBody(props: IProps): JSX.Element {
         <p>날짜</p>
       </ContentsWrapper>
       {props.data?.fetchBoards.map((el, dex) => (
-        <ContentsWrapper key={dex}>
+        <ContentsWrapper
+          key={dex}
+          onClick={onClickMovePage(`/communitys/community/${el._id}`)}
+        >
           <p>{dex + 1}</p>
           <p>{el.title}</p>
           <p>{el.writer}</p>
