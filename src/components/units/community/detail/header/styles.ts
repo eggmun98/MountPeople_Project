@@ -44,10 +44,16 @@ export const ImageWrapper = styled.div`
   height: 300px;
   margin-top: 40px;
   padding: 0 20%;
+  overflow: hidden;
 
   > div {
     width: 100%;
     height: 300px;
     background-color: #d9d9d9;
+  }
+  > img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
 `;
