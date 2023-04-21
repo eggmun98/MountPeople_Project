@@ -1,5 +1,5 @@
-import { IData } from "../../../units/community/write";
-import { useMutationCrateBoard } from "../mutation/useMutationCrateBoard";
+import { IData } from "../../../../units/community/write";
+import { useMutationCrateBoard } from "../../mutation/community/useMutationCrateBoard";
 
 export const useCreateBoardMode = (): {
   onClickCreateBoard: (data: IData) => Promise<void>;

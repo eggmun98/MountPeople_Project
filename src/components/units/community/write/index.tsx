@@ -4,7 +4,7 @@ import WriteBody from "./body";
 import { UploadWrapper, Wrapper } from "./styles";
 import Uploads01 from "../../../commons/uploads/01";
 import { useForm } from "react-hook-form";
-import { useCreateBoardMode } from "../../../commons/hooks/customs/useCrateBoardMode";
+import { useCreateBoardMode } from "../../../commons/hooks/customs/community/useCrateBoardMode";
 
 export interface IData {
   writer?: string;

@@ -1,56 +1,31 @@
+import { useDeleteBoardCommentMode } from "../../../../commons/hooks/customs/community/useDeleteBoardCommentMode";
+import { useQueryFetchBoardComments } from "../../../../commons/hooks/query/community/useQueryFetchBoardComments";
+
 import * as CL from "./styles";
 
 export default function CommentList(): JSX.Element {
+  const { data } = useQueryFetchBoardComments();
+  const { onClickDeleteCommentButton } = useDeleteBoardCommentMode();
+
   return (
     <CL.Wrapper>
-      <CL.CommentWrapper>
-        <CL.TopWrapper>
-          <CL.NameWrapper>
-            <p>문성진</p>
-            <p>2024.04.21</p>
-          </CL.NameWrapper>
-          <CL.ButtonWrapper>
-            <button>수정하기</button>
-            <button>삭제하기</button>
-          </CL.ButtonWrapper>
-        </CL.TopWrapper>
-        <CL.BottomWrapper>
-          안녕하세요 관악산은 어디에 있나요?????????? 제발
-          알려주세요~~~~~~~~~~~~~
-        </CL.BottomWrapper>
-      </CL.CommentWrapper>
-      <CL.CommentWrapper>
-        <CL.TopWrapper>
-          <CL.NameWrapper>
-            <p>문성진</p>
-            <p>2024.04.21</p>
-          </CL.NameWrapper>
-          <CL.ButtonWrapper>
-            <button>수정하기</button>
-            <button>삭제하기</button>
-          </CL.ButtonWrapper>
-        </CL.TopWrapper>
-        <CL.BottomWrapper>
-          안녕하세요 관악산은 어디에 있나요?????????? 제발
-          알려주세요~~~~~~~~~~~~~
-        </CL.BottomWrapper>
-      </CL.CommentWrapper>
-      <CL.CommentWrapper>
-        <CL.TopWrapper>
-          <CL.NameWrapper>
-            <p>문성진</p>
-            <p>2024.04.21</p>
-          </CL.NameWrapper>
-          <CL.ButtonWrapper>
-            <button>수정하기</button>
-            <button>삭제하기</button>
-          </CL.ButtonWrapper>
-        </CL.TopWrapper>
-        <CL.BottomWrapper>
-          안녕하세요 관악산은 어디에 있나요?????????? 제발
-          알려주세요~~~~~~~~~~~~~
-        </CL.BottomWrapper>
-      </CL.CommentWrapper>
+      {data?.fetchBoardComments.map((el) => (
+        <CL.CommentWrapper key={el._id}>
+          <CL.TopWrapper>
+            <CL.NameWrapper>
+              <p>{el.writer}</p>
+              <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
+            </CL.NameWrapper>
+            <CL.ButtonWrapper>
+              <button>수정하기</button>
+              <button onClick={onClickDeleteCommentButton(el._id)}>
+                삭제하기
+              </button>
+            </CL.ButtonWrapper>
+          </CL.TopWrapper>
+          <CL.BottomWrapper>{el.contents}</CL.BottomWrapper>
+        </CL.CommentWrapper>
+      ))}
     </CL.Wrapper>
   );
 }

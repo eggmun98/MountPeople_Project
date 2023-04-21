@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import {
   IQuery,
   IQueryFetchBoardsCountArgs,
-} from "../../../../commons/types/generated/types";
+} from "../../../../../commons/types/generated/types";
 
 const FETCH_BOARD_COUNT = gql`
   query {
