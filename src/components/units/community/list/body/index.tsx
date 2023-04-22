@@ -1,4 +1,4 @@
-import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
+import { movePageMode } from "../../../../commons/hooks/customs/ every/movePageMode";
 import { ContentsWrapper, Wrapper } from "./styles";
 import { IProps } from "./types";
 
