@@ -34,7 +34,7 @@ export const NameWrapper = styled.div`
   }
   > input {
     width: 100px;
-    height: 20px;
+    height: 25px;
     margin-right: 12px;
     padding: 0 12px;
     font-size: 12px;
@@ -47,7 +47,7 @@ export const NameWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     width: 100px;
-    height: 20px;
+    height: 25px;
     margin-right: 12px;
     padding: 0 12px;
     font-size: 12px;
@@ -88,6 +88,7 @@ export const BottomWrapper = styled.div`
 `;
 
 export const Input01 = styled.input`
+  width: 100%;
   height: 50px;
   padding: 0 12px;
   border: 1px solid #3a6625;
