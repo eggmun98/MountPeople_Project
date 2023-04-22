@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
+import { movePageMode } from "../../../../commons/hooks/customs/ every/movePageMode";
 import * as D from "./styles";
 import { useDeleteBoardMode } from "../../../../commons/hooks/customs/community/useDeleteBoardMode";
 

@@ -1,10 +1,22 @@
 import styled from "@emotion/styled";
 
+export const OutWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 40px;
+`;
+
+export const MapWrapper = styled.div`
+  width: 30%;
+  margin-right: 40px;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 70%;
 `;
 
 export const TopWrapper = styled.div`
@@ -12,9 +24,8 @@ export const TopWrapper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  margin-top: 40px;
   > input {
-    width: 8%;
+    width: 10%;
     height: 40px;
     margin-right: 20px;
     padding: 0 12px;
@@ -23,7 +34,7 @@ export const TopWrapper = styled.div`
     outline-color: #3a6625;
   }
   > button {
-    width: 8%;
+    width: 10%;
     height: 40px;
     padding: 0 12px;
     color: #fff;
@@ -36,7 +47,7 @@ export const TopWrapper = styled.div`
 
 export const InputWrapper01 = styled.div`
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
 
   > input {
     width: 100%;
