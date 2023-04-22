@@ -1,14 +1,15 @@
-import { useState } from "react";
 import { useDeleteBoardCommentMode } from "../../../../commons/hooks/customs/community/useDeleteBoardCommentMode";
 import { useQueryFetchBoardComments } from "../../../../commons/hooks/query/community/useQueryFetchBoardComments";
 
 import * as CL from "./styles";
 import CommentEdit from "./edit";
+import { useRecoilState } from "recoil";
+import { originIndexState } from "../../../../commons/stores";
 
 export default function CommentList(): JSX.Element {
   const { data } = useQueryFetchBoardComments();
   const { onClickDeleteCommentButton } = useDeleteBoardCommentMode();
-  const [originIndex, setOriginIndex] = useState<number>(-1);
+  const [originIndex, setOriginIndex] = useRecoilState(originIndexState);
   const onClickEditWindow = (dex: number) => () => {
     setOriginIndex(dex);
   };

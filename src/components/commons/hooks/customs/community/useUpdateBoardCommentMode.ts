@@ -2,6 +2,8 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_BOARD_COMMENT } from "../../mutation/community/useQueryUpdateBoardComment";
 import { FETCH_BOARD_COMMENTS } from "../../query/community/useQueryFetchBoardComments";
 import { useRouter } from "next/router";
+import { originIndexState } from "../../../stores";
+import { useRecoilState } from "recoil";
 
 interface IData {
   contents: string;
@@ -14,6 +16,7 @@ export const useUpdateBoardCommentMode = (): {
   ) => (data: IData) => Promise<void>;
 } => {
   const [updateBoardComment] = useMutation(UPDATE_BOARD_COMMENT);
+  const [_, setOriginIndex] = useRecoilState(originIndexState);
   const router = useRouter();
 
   const onClickUpdateComment =
@@ -36,6 +39,7 @@ export const useUpdateBoardCommentMode = (): {
           },
         ],
       });
+      setOriginIndex(-1);
       alert("수정하였음");
     };
 

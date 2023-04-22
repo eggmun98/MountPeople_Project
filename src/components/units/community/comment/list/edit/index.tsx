@@ -22,13 +22,16 @@ export default function CommentEdit(props: IProps): JSX.Element {
             <input {...register("password")}></input>
           </CE.NameWrapper>
           <CE.ButtonWrapper>
-            <button>수정하기</button>
+            <button>수정완료</button>
             <button onClick={onClickCancel} type="button">
               취소하기
             </button>
           </CE.ButtonWrapper>
         </CE.TopWrapper>
-        <CE.Input01 {...register("contents")}></CE.Input01>
+        <CE.Input01
+          {...register("contents")}
+          defaultValue={props.el?.contents}
+        ></CE.Input01>
       </form>
     </CE.CommentWrapper>
   );
