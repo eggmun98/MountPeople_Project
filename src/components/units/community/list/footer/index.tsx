@@ -1,18 +1,15 @@
 import { ButtonWrapper, NumberWrapper, Wrapper } from "./styles";
 import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/community/useQueryFetchBoardCount";
 import Paginations01 from "../../../../commons/paginations/01";
+import { IProps } from "./types";
 
-export default function ListFooter(props: {
-  refetch: (params: { page: number }) => void;
-}): JSX.Element {
-  const { data } = useQueryFetchBoarCount();
-
+export default function ListFooter(props: IProps): JSX.Element {
   return (
     <Wrapper>
       <NumberWrapper>
         <Paginations01
           refetch={props.refetch}
-          count={data?.fetchBoardsCount}
+          count={props.dataCount?.fetchBoardsCount}
         ></Paginations01>
       </NumberWrapper>
       <ButtonWrapper>
