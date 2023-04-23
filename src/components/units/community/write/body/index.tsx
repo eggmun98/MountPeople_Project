@@ -5,7 +5,7 @@ import { IAddress, IProps } from "./types";
 import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import { useState } from "react";
-import { useMapCreationMode } from "../../../../commons/hooks/customs/ every/useMapCreationMode";
+import { useMapCreationMode } from "../../../../commons/hooks/customs/useMapCreationMode";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 export default function WriteBody(props: IProps): JSX.Element {
@@ -16,8 +16,6 @@ export default function WriteBody(props: IProps): JSX.Element {
   const [isModal, setIsModal] = useState<boolean>(false);
 
   mapCreation();
-  const myKey = String(process.env.NEXT_PUBLIC_API_KEY);
-  console.log("나의 키", myKey);
 
   const handleComplete = (data: IAddress): void => {
     addressShowModal();

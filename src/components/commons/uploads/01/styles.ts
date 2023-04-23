@@ -5,6 +5,12 @@ export const Wrapper = styled.div`
   margin-right: 40px;
 `;
 
+export const Image = styled.img`
+  width: 100px;
+  height: 100px;
+  user-select: none;
+`;
+
 export const ImageBox = styled.div`
   display: flex;
   flex-direction: row;

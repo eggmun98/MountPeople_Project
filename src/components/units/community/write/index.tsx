@@ -8,12 +8,15 @@ import { useCreateBoardMode } from "../../../commons/hooks/customs/community/use
 import { IData, IProps } from "./types";
 import { useQueryFetchBoard } from "../../../commons/hooks/query/community/useQueryFetchBoard";
 import { useUpdateBoardMode } from "../../../commons/hooks/customs/community/useUpdateBoardMode";
+import { useRecoilState } from "recoil";
+import { imagesState } from "../../../commons/stores";
 
 export default function CommunityWrite(props: IProps): JSX.Element {
   const { register, handleSubmit } = useForm<IData>();
   const { onClickCreateBoard } = useCreateBoardMode();
   const { onClickUpdateButton } = useUpdateBoardMode();
   const { data } = useQueryFetchBoard();
+  const [imageUrls, setImageUrls] = useRecoilState(imagesState);
 
   return (
     <Wrapper>
@@ -29,8 +32,14 @@ export default function CommunityWrite(props: IProps): JSX.Element {
         ></WriteHeader>
         <WriteBody register={register} data={data}></WriteBody>
         <UploadWrapper>
-          {new Array(3).fill("").map((el, dex) => (
-            <Uploads01 key={dex}></Uploads01>
+          {imageUrls.map((el, index) => (
+            <Uploads01
+              key={index}
+              el={el}
+              index={index}
+              imageUrls={imageUrls}
+              setImageUrls={setImageUrls}
+            ></Uploads01>
           ))}
         </UploadWrapper>
         <WriteFooter isEdit={props.isEdit}></WriteFooter>
