@@ -15,3 +15,8 @@ export const addressState = atom<string>({
   key: "addressState",
   default: "",
 });
+
+export const imagesState = atom<string[]>({
+  key: "imagesState",
+  default: ["", "", ""],
+});

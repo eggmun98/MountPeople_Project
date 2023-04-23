@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { addressState } from "../../../stores";
-import { useRecoilState } from "recoil";
 declare const window: typeof globalThis & {
   kakao?: typeof import("react-kakao-maps-sdk");
 };
@@ -10,10 +8,8 @@ export const useMapCreationMode = (): {
   mapCreation: () => void;
 } => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [address, setAddress] = useRecoilState<string>(addressState);
 
   const myKey = String(process.env.NEXT_PUBLIC_API_KEY);
-  console.log("나의 키2", myKey);
 
   const mapCreation = (): void => {
     useEffect(() => {
