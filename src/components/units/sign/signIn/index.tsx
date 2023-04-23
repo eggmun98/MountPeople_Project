@@ -1,6 +1,12 @@
+import { useForm } from "react-hook-form";
 import * as I from "./styles";
+import { useLoginMode } from "../../../commons/hooks/customs/useLoginMode";
+import { IData } from "./types";
 
 export default function SignIn(): JSX.Element {
+  const { register, handleSubmit } = useForm<IData>();
+  const { onClickLogin } = useLoginMode();
+
   return (
     <I.Wrapper>
       <I.InWrapper>
@@ -12,9 +18,17 @@ export default function SignIn(): JSX.Element {
             <h1>MountainPeople</h1>
           </I.TitleWrapper>
         </I.TopWrapper>
-        <input></input>
-        <input></input>
-        <button>로그인</button>
+        <form onSubmit={handleSubmit(onClickLogin)}>
+          <input
+            {...register("email")}
+            placeholder="이메일을 입력하세요."
+          ></input>
+          <input
+            {...register("password")}
+            placeholder="비밀번호를 입력하세요."
+          ></input>
+          <button>로그인</button>
+        </form>
       </I.InWrapper>
     </I.Wrapper>
   );

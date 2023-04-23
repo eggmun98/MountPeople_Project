@@ -1,4 +1,5 @@
-import { atom } from "recoil";
+import { atom, selector } from "recoil";
+import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 
 // 댓글 수정창 열기 닫기 변수
 export const originIndexState = atom<number>({
@@ -19,4 +20,17 @@ export const addressState = atom<string>({
 export const imagesState = atom<string[]>({
   key: "imagesState",
   default: ["", "", ""],
+});
+
+export const accessTokenState = atom({
+  key: "accessTokenState",
+  default: "",
+});
+
+export const restoreAccessTokenLoadable = selector({
+  key: "restoreAccessTokenLoadable",
+  get: async () => {
+    const newAccessToken = await getAccessToken();
+    return newAccessToken;
+  },
 });
