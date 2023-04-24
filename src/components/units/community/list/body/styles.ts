@@ -20,25 +20,25 @@ export const ContentsWrapper = styled.div`
     color: #3a6625;
   }
 
-  > p:nth-child(1) {
+  > p:nth-of-type(1) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 5%;
   }
-  > p:nth-child(2) {
+  > p:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 75%;
   }
-  > p:nth-child(3) {
+  > p:nth-of-type(3) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 15%;
   }
-  > p:nth-child(4) {
+  > p:nth-of-type(4) {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

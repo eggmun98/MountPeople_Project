@@ -28,7 +28,7 @@ export const NameWrapper = styled.div`
     margin-right: 10px;
     font-size: 16px;
   }
-  > p:nth-child(2) {
+  > p:nth-of-type(2) {
     font-size: 12px;
     color: #979797;
   }
@@ -69,7 +69,7 @@ export const ButtonWrapper = styled.div`
       color: #3a6625;
     }
   }
-  > button:nth-child(2) {
+  > button:nth-of-type(2) {
     margin-left: 10px;
     border: none;
     color: #979797;

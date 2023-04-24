@@ -19,10 +19,10 @@ export const ProductWrapper = styled.div`
     > p {
       font-size: 12px;
     }
-    > p:nth-child(2) {
+    > p:nth-of-type(2) {
       font-size: 14px;
     }
-    > p:last-child {
+    > p:nth-of-type(3) {
       font-size: 14px;
     }
   }
