@@ -27,8 +27,8 @@ export const ListWrapper = styled.div`
 `;
 
 export const ProductWrapper = styled.div`
-  width: 20%;
-  height: 230px;
+  width: 24%;
+  height: 300px;
   border-radius: 5px;
   background-color: #d9d9d9;
 `;

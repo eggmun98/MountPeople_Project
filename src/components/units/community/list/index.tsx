@@ -8,11 +8,9 @@ import { Wrapper } from "./styles";
 
 export default function CommunityList(): JSX.Element {
   const { data, refetch } = useQueryFetchBoards();
-  const { data: dataCount, refetch: refetchBoardsCount } =
-    useQueryFetchBoarCount();
-  const { onChangeSearchbar, keyword } = useSearchbarMode({
+  const { data: dataCount } = useQueryFetchBoarCount();
+  const { onChangeSearchbar } = useSearchbarMode({
     refetch,
-    refetchBoardsCount,
   });
 
   return (

@@ -5,7 +5,5 @@ export interface IProps {
   refetch: (
     variables?: Partial<any> | undefined
   ) => Promise<ApolloQueryResult<Pick<IQuery, any>>>;
-  dataCount: {
-    fetchBoardsCount: number;
-  };
+  dataCount: Pick<IQuery, "fetchBoardsCount"> | undefined;
 }
