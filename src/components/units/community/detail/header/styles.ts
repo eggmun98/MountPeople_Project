@@ -28,7 +28,7 @@ export const ContentWrapper = styled.div`
   > div {
     width: 90%;
   }
-  > div:nth-child(2) {
+  > div:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
