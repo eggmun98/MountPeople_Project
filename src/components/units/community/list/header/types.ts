@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface IProps {
-  onChangeSearchbar: () => void;
+  onChangeSearchbar: (event: ChangeEvent<HTMLInputElement>) => void;
 }
