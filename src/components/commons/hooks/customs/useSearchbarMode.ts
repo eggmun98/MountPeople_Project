@@ -7,9 +7,6 @@ interface IUseSearchbarArgs {
   refetch: (
     variables?: Partial<any> | undefined
   ) => Promise<ApolloQueryResult<Pick<IQuery, any>>>;
-  refetchBoardsCount: (
-    variables?: Partial<any> | undefined
-  ) => Promise<ApolloQueryResult<Pick<IQuery, any>>>;
 }
 
 export const useSearchbarMode = (
@@ -22,7 +19,6 @@ export const useSearchbarMode = (
 
   const getDebounce = _.debounce((value: string) => {
     void args.refetch({ search: value, page: 1 });
-    void args.refetchBoardsCount({ search: value });
     setKeyword(value);
   }, 500);
 
