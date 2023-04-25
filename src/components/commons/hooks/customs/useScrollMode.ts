@@ -32,12 +32,12 @@ export const useScrollMode = (
 ): {
   onLoadMore: () => Promise<void>;
 } => {
-  const { fetchKey } = args;
+  const { fetchKey, data, fetchMore } = args;
   const onLoadMore = async (): Promise<void> => {
-    if (args.data === undefined) return;
-    await args.fetchMore({
+    if (data === undefined) return;
+    await fetchMore({
       variables: {
-        page: Math.ceil((args.data?.fetchUseditems.length ?? 10) / 10) + 1,
+        page: Math.ceil((data?.fetchUseditems.length ?? 10) / 10) + 1,
       },
       updateQuery: (prev: any, { fetchMoreResult }) => {
         if (fetchMoreResult[fetchKey] === undefined) {
