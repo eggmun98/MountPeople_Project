@@ -1,12 +1,15 @@
 import { Quill, Wrapper } from "./styles";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { modules } from "../../../../../commons/libraries/modules";
+import { IProps } from "../header/types";
 
-export default function WriteBody(): JSX.Element {
+export default function WriteBody(props: IProps): JSX.Element {
+  const onChangeContents = (value: string): void => {
+    props.setValue("contents", value);
+  };
   return (
     <Wrapper>
-      <Quill modules={modules}></Quill>
+      <Quill modules={modules} onChange={onChangeContents}></Quill>
     </Wrapper>
   );
 }
