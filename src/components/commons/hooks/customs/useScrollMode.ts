@@ -9,8 +9,8 @@ import {
 } from "../../../../commons/types/generated/types";
 
 interface IArgs {
-  data?: Pick<IQuery, "fetchUseditems"> | undefined;
-  fetchKey: string;
+  data?: any;
+  fetchKey: any;
   fetchMore: <
     TFetchData = Pick<IQuery, "fetchUseditems">,
     TFetchVars extends OperationVariables = IQueryFetchUseditemsArgs
@@ -37,7 +37,7 @@ export const useScrollMode = (
     if (data === undefined) return;
     await fetchMore({
       variables: {
-        page: Math.ceil((data?.fetchUseditems.length ?? 10) / 10) + 1,
+        page: Math.ceil((data[fetchKey].length ?? 10) / 10) + 1,
       },
       updateQuery: (prev: any, { fetchMoreResult }) => {
         if (fetchMoreResult[fetchKey] === undefined) {
