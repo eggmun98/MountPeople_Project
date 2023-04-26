@@ -3,7 +3,7 @@ import ListBody from "./body";
 import ListFooter from "./footer";
 import ListHeader from "./header";
 import { Wrapper } from "./styles";
-import { FETCH_USED_ITEMS } from "../../../commons/hooks/query/market/useQueryFetchUsedItems";
+import { FETCH_USED_ITEMS } from "../../../commons/hooks/query/market/useQueryFetchUseditems";
 import { useSearchbarMode } from "../../../commons/hooks/customs/useSearchbarMode";
 
 export default function MarketList(): JSX.Element {
