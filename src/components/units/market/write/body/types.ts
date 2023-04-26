@@ -6,9 +6,10 @@ export interface IData {
   remarks: string;
   price: number;
   tags: string;
+  contents: string;
 }
 
 export interface IProps {
-  register?: UseFormRegister<IData>;
+  setValue: UseFormSetValue<IData>;
   data: Pick<IQuery, "fetchUseditem"> | undefined;
 }
