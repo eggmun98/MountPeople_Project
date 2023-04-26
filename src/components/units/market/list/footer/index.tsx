@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useScrollMode } from "../../../../commons/hooks/customs/useScrollMode";
 import * as L from "./styles";
-import { FETCH_USED_ITEMS } from "../../../../commons/hooks/query/market/useQueryFetchUsedItems";
+import { FETCH_USED_ITEMS } from "../../../../commons/hooks/query/market/useQueryFetchUseditems";
 import { IEl, IProps } from "./types";
 import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 

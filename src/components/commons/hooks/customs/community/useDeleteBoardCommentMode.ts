@@ -3,7 +3,9 @@ import { DELETE_BOARD_COMMENT } from "../../mutation/community/useMutationDelete
 import { FETCH_BOARD_COMMENTS } from "../../query/community/useQueryFetchBoardComments";
 import { useRouter } from "next/router";
 
-export const useDeleteBoardCommentMode = () => {
+export const useDeleteBoardCommentMode = (): {
+  onClickDeleteCommentButton: (boardCommentId: string) => () => Promise<void>;
+} => {
   const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
   const router = useRouter();
 

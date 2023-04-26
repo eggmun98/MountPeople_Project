@@ -1,9 +1,15 @@
 import { atom, selector } from "recoil";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 
-// 댓글 수정창 열기 닫기 변수
+// 게시글 댓글 수정창 열기 닫기 변수
 export const originIndexState = atom<number>({
   key: "originIndexState",
+  default: -1,
+});
+
+// 상품 댓글 수정창 열기 닫기 변수
+export const originIndexState02 = atom<number>({
+  key: "originIndexState02",
   default: -1,
 });
 
