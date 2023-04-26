@@ -7,18 +7,25 @@ import { useCreateProductMode } from "../../../commons/hooks/customs/market/useC
 import { IData } from "./header/types";
 import { useQuery } from "@apollo/client";
 import { FETCH_USED_ITEM } from "../../../commons/hooks/query/market/useQueryFetchUseditem";
+import { useUpdateProductMode } from "../../../commons/hooks/customs/market/useUpdateProductMode";
+import { IProps } from "./types";
 
-export default function MarketWrite(): JSX.Element {
+export default function MarketWrite(props: IProps): JSX.Element {
   const { handleSubmit, register, setValue } = useForm<IData>();
   const { onClickCreateProduct } = useCreateProductMode();
+  const { onClickUpdateProduct } = useUpdateProductMode();
   const { data } = useQuery(FETCH_USED_ITEM);
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit(onClickCreateProduct)}>
-        <WriteHeader register={register}></WriteHeader>
+      <form
+        onSubmit={handleSubmit(
+          props.isEdit ? onClickUpdateProduct : onClickCreateProduct
+        )}
+      >
+        <WriteHeader register={register} data={data}></WriteHeader>
         <WriteBody setValue={setValue} data={data}></WriteBody>
-        <WriteFooter></WriteFooter>
+        <WriteFooter isEdit={props.isEdit}></WriteFooter>
       </form>
     </Wrapper>
   );
