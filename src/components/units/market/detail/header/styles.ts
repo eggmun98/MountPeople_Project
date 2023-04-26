@@ -15,9 +15,11 @@ export const MainImgWrapper = styled.div`
   padding: 30px;
 `;
 
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled.img`
   height: 100%;
-  border-right: 1px solid #979797;
+  height: 300px;
+  object-fit: cover;
+  /* border-right: 1px solid #979797;  */
 `;
 
 export const ContentsWrapper = styled.div`
