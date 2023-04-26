@@ -5,7 +5,7 @@ import {
   IQueryFetchBoardArgs,
 } from "../../../../../commons/types/generated/types";
 
-export const FETCH_USEDITEM = gql`
+export const FETCH_USED_ITEM = gql`
   query fetchUseditem($useditemId: ID!) {
     fetchUseditem(useditemId: $useditemId) {
       _id
@@ -29,7 +29,7 @@ export const FETCH_USEDITEM = gql`
 export const useQueryFetchUsedItem = (): typeof result => {
   const router = useRouter();
   const result = useQuery<Pick<IQuery, "fetchUseditem">, IQueryFetchBoardArgs>(
-    FETCH_USEDITEM,
+    FETCH_USED_ITEM,
     {
       variables: {
         useditemId: router.query.page,

@@ -4,5 +4,5 @@ import {
 } from "../../../../../commons/types/generated/types";
 
 export interface IProps {
-  data: Pick<IQuery, "fetchUseditem">;
+  data: Pick<IQuery, "fetchUseditem"> | undefined;
 }
