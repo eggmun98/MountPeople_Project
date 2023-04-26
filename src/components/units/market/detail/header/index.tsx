@@ -1,7 +1,7 @@
 import * as D from "./styles";
-import { AiOutlineHeart } from "react-icons/ai";
+import { IProps } from "./types";
 
-export default function DetailHeader(): JSX.Element {
+export default function DetailHeader(props: IProps): JSX.Element {
   return (
     <D.Wrapper>
       <D.MainImgWrapper>
@@ -9,28 +9,25 @@ export default function DetailHeader(): JSX.Element {
       </D.MainImgWrapper>
       <D.ContentsWrapper>
         <D.TitleWrapper>
-          <h1>등산스틱 팝니다~</h1>
-          <p>문성진</p>
+          <h1>{props.data?.fetchUseditem.name}</h1>
+          <p>{props.data?.fetchUseditem.seller?.name}</p>
         </D.TitleWrapper>
         <D.PriceWrapper>
-          <p>445,000원</p>
-          <p>2023.04.25</p>
+          <p>{props.data?.fetchUseditem.price}</p>
+          <p>
+            {props.data?.fetchUseditem.createdAt
+              .slice(0, 10)
+              .replaceAll("-", ".")}
+          </p>
         </D.PriceWrapper>
         <D.RemarksWrapper>
-          <p>세계 최고의 명품스틱</p>
+          <p>{props.data?.fetchUseditem.remarks}</p>
           <D.Heart></D.Heart>
         </D.RemarksWrapper>
         <D.TagWrapper>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
-          <div>추억</div>
+          {props.data?.fetchUseditem?.tags.map((el) => (
+            <div key={el}>{el}</div>
+          ))}
         </D.TagWrapper>
       </D.ContentsWrapper>
     </D.Wrapper>
