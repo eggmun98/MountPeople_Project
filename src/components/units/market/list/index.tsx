@@ -1,5 +1,4 @@
 import { useQuery } from "@apollo/client";
-import Searchbars01 from "../../../commons/searchbars/01";
 import ListBody from "./body";
 import ListFooter from "./footer";
 import ListHeader from "./header";
