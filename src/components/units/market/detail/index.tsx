@@ -1,4 +1,5 @@
-import { useQueryFetchUsedItem } from "../../../commons/hooks/query/market/useQueryFetchUsedItem";
+import { useQueryFetchUsedItem } from "../../../commons/hooks/query/market/useQueryFetchUseditem";
+import MarketComment from "../comment";
 import DetailBody from "./body";
 import DetailHeader from "./header";
 import { Wrapper } from "./styles";
@@ -9,6 +10,7 @@ export default function MarketDetail(): JSX.Element {
     <Wrapper>
       <DetailHeader data={data}></DetailHeader>
       <DetailBody data={data}></DetailBody>
+      <MarketComment></MarketComment>
     </Wrapper>
   );
 }
