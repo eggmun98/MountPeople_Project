@@ -82,6 +82,18 @@ export const ButtonWrapper = styled.div`
       color: #3a6625;
     }
   }
+  > button:nth-of-type(3) {
+    margin-left: 10px;
+    border: none;
+    color: #979797;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+
+    :hover {
+      color: #3a6625;
+    }
+  }
 `;
 
 export const BottomWrapper = styled.div`
