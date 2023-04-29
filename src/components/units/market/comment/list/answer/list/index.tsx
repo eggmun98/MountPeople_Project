@@ -1,47 +1,59 @@
+import { useQuery } from "@apollo/client";
+import { FETCH_USED_ITEM_QUESTIONS_ANSWERS } from "../../../../../../commons/hooks/query/market/useQueryFetchUsedItemAnswers";
+import AnswerEdit from "./edit";
 import * as A from "./styles";
+import {
+  IQuery,
+  IQueryFetchUseditemQuestionAnswersArgs,
+} from "../../../../../../../commons/types/generated/types";
+import { useDeleteAnswerMode } from "../../../../../../commons/hooks/customs/market/useDeleteAnswerMode";
+import { useRecoilState } from "recoil";
+import { answerEditIndexState } from "../../../../../../commons/stores";
 
-export default function AnswerList(): JSX.Element {
+export default function AnswerList(props): JSX.Element {
+  const { data } = useQuery<
+    Pick<IQuery, "fetchUseditemQuestionAnswers">,
+    IQueryFetchUseditemQuestionAnswersArgs
+  >(FETCH_USED_ITEM_QUESTIONS_ANSWERS, {
+    variables: {
+      useditemQuestionId: props.el,
+    },
+  });
+  const { onClickDeleteAnswer } = useDeleteAnswerMode();
+  const [editIndex, setEditIndex] = useRecoilState(answerEditIndexState);
+
+  const onClickWindow = (dex: number) => () => {
+    setEditIndex(dex);
+  };
+
   return (
     <>
-      <A.Wrapper>
-        <A.LeftWrapper>
-          <div></div>
-        </A.LeftWrapper>
-        <A.AnswerWrapper>
-          <A.TopWrapper>
-            <A.NameWrapper>
-              <p>문성진</p>
-              {/* <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p> */}
-            </A.NameWrapper>
-            <A.ButtonWrapper>
-              <button>답변달기</button>
-              <button>수정하기</button>
-              <button>삭제하기</button>
-            </A.ButtonWrapper>
-          </A.TopWrapper>
-          <A.BottomWrapper>
-            {"대대대대대대대댓글입니다~~~~~~~~~~~~"}
-          </A.BottomWrapper>
-        </A.AnswerWrapper>
-      </A.Wrapper>
-
-      <A.Wrapper>
-        <A.LeftWrapper>
-          <div></div>
-        </A.LeftWrapper>
-        <A.AnswerWrapper>
-          <form>
-            <A.TopWrapper>
+      {data?.fetchUseditemQuestionAnswers.map((el, dex) =>
+        editIndex !== dex ? (
+          <A.Wrapper key={el._id}>
+            <A.LeftWrapper>
               <div></div>
-              <A.ButtonWrapper>
-                <button>수정하기</button>
-                <button type="button">취소하기</button>
-              </A.ButtonWrapper>
-            </A.TopWrapper>
-            <A.Input01></A.Input01>
-          </form>
-        </A.AnswerWrapper>
-      </A.Wrapper>
+            </A.LeftWrapper>
+            <A.AnswerWrapper>
+              <A.TopWrapper>
+                <A.NameWrapper>
+                  <p>{el.user.name}</p>
+                  <p>{"2023.02.30"}</p>
+                </A.NameWrapper>
+                <A.ButtonWrapper>
+                  <button onClick={onClickWindow(dex)}>수정하기</button>
+                  <button onClick={onClickDeleteAnswer(el._id, props.el)}>
+                    삭제하기
+                  </button>
+                </A.ButtonWrapper>
+              </A.TopWrapper>
+              <A.BottomWrapper>{el.contents}</A.BottomWrapper>
+            </A.AnswerWrapper>
+          </A.Wrapper>
+        ) : (
+          <AnswerEdit key={el._id} qId={props.el} aId={el._id}></AnswerEdit>
+        )
+      )}
     </>
   );
 }
