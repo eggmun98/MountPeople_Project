@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { FETCH_USED_ITEM_QUESTIONS_ANSWERS } from "../../../../../../commons/hooks/query/market/useQueryFetchUsedItemAnswers";
-import AnswerEdit from "./edit";
+import AnswerEdit from "./answerEdit";
 import * as A from "./styles";
 import {
   IQuery,
@@ -51,7 +51,7 @@ export default function AnswerList(props): JSX.Element {
             </A.AnswerWrapper>
           </A.Wrapper>
         ) : (
-          <AnswerEdit key={el._id} qId={props.el} aId={el._id}></AnswerEdit>
+          <AnswerEdit key={el._id} questionId={props.el} el={el}></AnswerEdit>
         )
       )}
     </>

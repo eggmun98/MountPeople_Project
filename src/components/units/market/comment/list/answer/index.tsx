@@ -1,6 +1,6 @@
-import AnswerList from "./list";
+import AnswerList from "./answerList";
 import { Wrapper } from "./styles";
-import AnswerWrite from "./write";
+import AnswerWrite from "./answerWrite";
 import { useRecoilState } from "recoil";
 import { answerIndexState } from "../../../../../commons/stores";
 
