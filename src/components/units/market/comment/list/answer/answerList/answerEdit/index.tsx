@@ -13,7 +13,9 @@ export default function AnswerEdit(props): JSX.Element {
       </A.LeftWrapper>
       <A.AnswerWrapper>
         <form
-          onSubmit={handleSubmit(onClickUpdateAnswer(props.aId, props.qId))}
+          onSubmit={handleSubmit(
+            onClickUpdateAnswer(props.el._id, props.questionId)
+          )}
         >
           <A.TopWrapper>
             <div></div>
@@ -22,7 +24,10 @@ export default function AnswerEdit(props): JSX.Element {
               <button type="button">취소하기</button>
             </A.ButtonWrapper>
           </A.TopWrapper>
-          <A.Input01 {...register("contents")}></A.Input01>
+          <A.Input01
+            {...register("contents")}
+            defaultValue={props.el.contents}
+          ></A.Input01>
         </form>
       </A.AnswerWrapper>
     </A.Wrapper>

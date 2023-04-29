@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import * as A from "../list/styles";
+import * as A from "../answerList/styles";
 import { answerIndexState } from "../../../../../../commons/stores";
 import { useForm } from "react-hook-form";
 import { useCreateAnswerMode } from "../../../../../../commons/hooks/customs/market/useCrateAnswerMode";
