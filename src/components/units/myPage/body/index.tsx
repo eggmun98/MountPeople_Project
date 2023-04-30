@@ -1,6 +1,12 @@
+import { useCreatePointMode } from "../../../commons/hooks/customs/myPage/useCreatePointMode";
+import { useResetPasswordMode } from "../../../commons/hooks/customs/myPage/useResetPasswordMode";
 import * as M from "./styles";
+import { IProps } from "./types";
 
-export default function MyPageBody(): JSX.Element {
+export default function MyPageBody(props: IProps): JSX.Element {
+  const { onClickPasswordEdit } = useResetPasswordMode();
+  const { onClickPayment } = useCreatePointMode();
+
   return (
     <M.Wrapper>
       <M.ProfileWrapper>
@@ -9,9 +15,9 @@ export default function MyPageBody(): JSX.Element {
       </M.ProfileWrapper>
       <M.NameWrapper>
         <div>
-          <p>문성진</p>
-          <p>eggmun98@gamilc.om</p>
-          <p>200,000P</p>
+          <p>{props.data?.fetchUserLoggedIn.name}</p>
+          <p>{props.data?.fetchUserLoggedIn.email}</p>
+          <p>{props.data?.fetchUserLoggedIn?.userPoint?.amount} P</p>
         </div>
         <button>포인트 충전</button>
       </M.NameWrapper>
