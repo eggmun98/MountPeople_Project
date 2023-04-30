@@ -49,7 +49,6 @@ export const modules = {
         },
         { background: [] },
       ],
-      ["image", "video"],
       ["clean"],
     ],
   },
