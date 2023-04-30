@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface IProps {
+  isActive: boolean;
+}
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -39,13 +43,13 @@ export const MenuWrapper = styled.div`
   width: 100%;
   cursor: pointer;
   user-select: none;
-  > h1 {
-    font-size: 24px;
-    color: #2f3438;
+`;
 
-    :hover {
-      color: #3a6625;
-    }
+export const MenuTitle = styled.div`
+  font-size: 24px;
+  color: ${(props: IProps) => (props.isActive ? "#3a6625" : "#2f3438")};
+  :hover {
+    color: #3a6625;
   }
 `;
 
