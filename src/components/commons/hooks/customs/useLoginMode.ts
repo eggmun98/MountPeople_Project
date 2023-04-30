@@ -26,10 +26,9 @@ export const useLoginMode = (): {
       return;
     }
     setAccessToken(accessToken);
+    alert("로그인 하였습니다.");
 
     await router.push("/communitys");
-
-    alert("로그인 하였습니다.");
   };
 
   return {

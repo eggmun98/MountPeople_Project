@@ -19,6 +19,7 @@ export const useSignUpMode = (): {
         },
       },
     });
+    alert("회원가입 되었습니다.");
     await router.push("/communitys");
   };
 
