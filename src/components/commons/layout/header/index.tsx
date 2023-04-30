@@ -24,7 +24,10 @@ export default function LayoutHeader(): JSX.Element {
     <Wrapper>
       <div>
         <LogoWrapper>
-          <Logo src="/layout/header/mpLogo.png"></Logo>
+          <Logo
+            src="/layout/header/mpLogo.png"
+            onClick={onClickMovePage("/")}
+          ></Logo>
         </LogoWrapper>
         <MenuWrapper>
           <MenuTitle
@@ -44,7 +47,7 @@ export default function LayoutHeader(): JSX.Element {
           </MenuTitle>
         </MenuWrapper>
         <LoginWrapper>
-          <button>login</button>
+          <button onClick={onClickMovePage("/sign/signIn")}>login</button>
         </LoginWrapper>
       </div>
     </Wrapper>
