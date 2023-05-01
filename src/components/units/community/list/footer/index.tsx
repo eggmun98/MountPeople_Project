@@ -2,8 +2,11 @@ import { ButtonWrapper, NumberWrapper, Wrapper } from "./styles";
 import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/community/useQueryFetchBoardCount";
 import Paginations01 from "../../../../commons/paginations/01";
 import { IProps } from "./types";
+import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 
 export default function ListFooter(props: IProps): JSX.Element {
+  const { onClickMovePage } = movePageMode();
+
   return (
     <Wrapper>
       <NumberWrapper>
@@ -13,7 +16,9 @@ export default function ListFooter(props: IProps): JSX.Element {
         ></Paginations01>
       </NumberWrapper>
       <ButtonWrapper>
-        <button>게시글 작성하기</button>
+        <button onClick={onClickMovePage("/communitys/new")}>
+          게시글 작성하기
+        </button>
       </ButtonWrapper>
     </Wrapper>
   );
