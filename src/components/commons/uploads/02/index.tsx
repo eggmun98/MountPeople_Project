@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "../../hooks/mutation/useMutationUploadFile";
 import { IProps } from "./types";
 
-export default function Uploads01(props: IProps): JSX.Element {
+export default function Uploads02(props: IProps): JSX.Element {
   const fileRef = useRef<HTMLInputElement>(null);
   const [uploadFile] = useMutation(UPLOAD_FILE);
 

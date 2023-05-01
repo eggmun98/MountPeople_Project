@@ -1,11 +1,23 @@
+import { useRecoilState } from "recoil";
 import * as D from "./styles";
 import { IProps } from "./types";
+import { imagesState02 } from "../../../../commons/stores";
+import Uploads02 from "../../../../commons/uploads/02";
 
 export default function WriteHeader(props: IProps): JSX.Element {
+  const [imageUrls, setImageUrls] = useRecoilState(imagesState02);
+
   return (
     <D.Wrapper>
       <D.MainImgWrapper>
-        <D.ImgWrapper></D.ImgWrapper>
+        <D.ImgWrapper>
+          <Uploads02
+            el={imageUrls[0]}
+            index={0}
+            imageUrls={imageUrls}
+            setImageUrls={setImageUrls}
+          ></Uploads02>
+        </D.ImgWrapper>
       </D.MainImgWrapper>
       <D.ContentsWrapper>
         <input

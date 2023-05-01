@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 40px;
+  margin: 40px 0;
 
   > button {
     width: 10%;
@@ -20,6 +20,10 @@ export const Wrapper = styled.div`
       color: white;
       background-color: #3a6625;
       transition: all 0.3s ease-in-out;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
 `;
