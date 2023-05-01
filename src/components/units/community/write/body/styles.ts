@@ -5,11 +5,21 @@ export const OutWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   margin-top: 40px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 20px;
+  }
 `;
 
 export const MapWrapper = styled.div`
   width: 30%;
   margin-right: 40px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-right: 20px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -17,6 +27,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 70%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 export const TopWrapper = styled.div`
@@ -32,6 +47,9 @@ export const TopWrapper = styled.div`
     border: 1px solid #c7cbc6;
     border-radius: 5px;
     outline-color: #3a6625;
+    @media (max-width: 767px) {
+      width: 50%;
+    }
   }
   > button {
     width: 10%;
@@ -42,6 +60,9 @@ export const TopWrapper = styled.div`
     border-radius: 5px;
     background-color: #3a6625;
     cursor: pointer;
+    @media (max-width: 767px) {
+      width: 50%;
+    }
   }
 `;
 

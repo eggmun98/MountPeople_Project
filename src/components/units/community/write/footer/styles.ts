@@ -22,4 +22,11 @@ export const Wrapper = styled.div`
       transition: all 0.3s ease-in-out;
     }
   }
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
+    > button {
+      width: 100%;
+    }
+  }
 `;

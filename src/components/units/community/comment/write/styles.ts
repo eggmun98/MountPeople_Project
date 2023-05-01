@@ -15,13 +15,20 @@ export const TopWrapper = styled.div`
   width: 100%;
   margin-bottom: 10px;
   > input {
-    width: 13%;
+    width: 20%;
     height: 30px;
     margin-right: 12px;
     padding: 0 12px;
     border: 1px solid #3a6625;
     border-radius: 5px;
     outline-color: #3a6625;
+
+    @media (max-width: 1023px) {
+      width: 25%;
+    }
+    @media (max-width: 767px) {
+      width: 20%;
+    }
   }
 `;
 
@@ -54,6 +61,24 @@ export const BottomWrapper = styled.div`
       color: white;
       background-color: #3a6625;
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    > input {
+      width: 80%;
+    }
+    > button {
+      width: 20%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    > input {
+      width: 75%;
+    }
+    > button {
+      width: 25%;
     }
   }
 `;
