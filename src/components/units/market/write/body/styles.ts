@@ -7,7 +7,7 @@ const ReactQuill = dynamic(async () => await import("react-quill"), {
 
 export const Wrapper = styled.div`
   margin-top: 40px;
-  height: 700px;
+  height: 100%;
 `;
 
 export const Quill = styled(ReactQuill)`
