@@ -16,11 +16,24 @@ export const Wrapper = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+
   > h1 {
+    text-align: center;
     font-size: 18px;
     color: #3a6625;
+  }
+
+  > button {
+    padding: 6px;
+    color: #292929;
+    border: 1px solid #3a6625;
+    background-color: #fff;
+    :hover {
+      color: #3a6625;
+    }
   }
 `;
 
