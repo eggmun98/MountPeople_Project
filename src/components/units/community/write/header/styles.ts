@@ -28,6 +28,14 @@ export const WriteWrapper = styled.div`
     border-radius: 5px;
     outline-color: #3a6625;
   }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin: 0;
+    > input {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
 `;
 
 export const InputWrapper01 = styled.div`
@@ -42,6 +50,10 @@ export const InputWrapper01 = styled.div`
     border-radius: 5px;
     outline-color: #3a6625;
   }
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
+  }
 `;
 
 export const ContentsWrapper = styled.div`
@@ -55,5 +67,9 @@ export const ContentsWrapper = styled.div`
     border: 1px solid #c7cbc6;
     border-radius: 5px;
     outline-color: #3a6625;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
   }
 `;

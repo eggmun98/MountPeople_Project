@@ -56,6 +56,7 @@ export default function WriteBody(props: IProps): JSX.Element {
                 ? zipcode
                 : props.data?.fetchBoard.boardAddress?.zipcode ?? ""
             }
+            placeholder="0 0 0 0 0 0"
           ></input>
           <button type="button" onClick={addressShowModal}>
             등록
@@ -68,6 +69,7 @@ export default function WriteBody(props: IProps): JSX.Element {
                 ? address
                 : props.data?.fetchBoard?.boardAddress?.address ?? ""
             }
+            placeholder="주소를 등록하세요."
           ></input>
         </W.InputWrapper01>
         <W.InputWrapper01>
@@ -76,6 +78,7 @@ export default function WriteBody(props: IProps): JSX.Element {
             defaultValue={String(
               props.data?.fetchBoard.boardAddress?.addressDetail ?? ""
             )}
+            placeholder="상세 주소를 입력하세요."
           ></input>
         </W.InputWrapper01>
         {isModal && (
