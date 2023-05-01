@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const NumberWrapper = styled.div`
@@ -14,6 +18,11 @@ export const NumberWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 800px;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -29,5 +38,8 @@ export const ButtonWrapper = styled.div`
       background-color: #3a6625;
       transition: all 0.3s ease-in-out;
     }
+  }
+  @media (max-width: 767px) {
+    margin-top: 10px;
   }
 `;
