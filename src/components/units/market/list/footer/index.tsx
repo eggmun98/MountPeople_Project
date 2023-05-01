@@ -1,7 +1,5 @@
-import { useQuery } from "@apollo/client";
 import { useScrollMode } from "../../../../commons/hooks/customs/useScrollMode";
 import * as L from "./styles";
-import { FETCH_USED_ITEMS } from "../../../../commons/hooks/query/market/useQueryFetchUseditems";
 import { IEl, IProps } from "./types";
 import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 
@@ -22,18 +20,17 @@ export default function ListFooter(props: IProps): JSX.Element {
             key={el._id}
             onClick={onClickMovePage(`/markets/market/${el._id}`)}
           >
-            {el.images[0] !== "" ? (
+            {el.images[0] ? (
               <L.ProductImg
                 src={`https://storage.googleapis.com/${el.images[0]}`}
               ></L.ProductImg>
             ) : (
               <L.HiddenImg></L.HiddenImg>
             )}
-            <div>
-              <p>{el.remarks}</p>
+            <L.TextWrapper>
               <p>{el.name}</p>
-              <p>{el.price}</p>
-            </div>
+              <p>{el.price.toLocaleString()}원</p>
+            </L.TextWrapper>
           </L.ProductWrapper>
         ))}
       </L.Wrapper>

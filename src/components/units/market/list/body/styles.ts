@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
   padding: 20px 0 40px 0;
   border-top: 1px solid #979797;
   border-bottom: 1px solid #979797;
+
+  @media (max-width: 767px) {
+    margin-top: 30px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -24,6 +28,18 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 1023px) {
+    flex-wrap: wrap;
+    > div:last-of-type {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    > div:last-of-type {
+      display: flex;
+    }
+  }
 `;
 
 export const ProductWrapper = styled.div`
@@ -31,4 +47,16 @@ export const ProductWrapper = styled.div`
   height: 300px;
   border-radius: 5px;
   background-color: #d9d9d9;
+
+  @media (max-width: 1023px) {
+    width: 32%;
+    height: 250px;
+    margin: 20px 0.1px;
+  }
+
+  @media (max-width: 767px) {
+    width: 49%;
+    height: 200px;
+    margin: 20px 0.1px;
+  }
 `;

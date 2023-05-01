@@ -16,5 +16,6 @@ module.exports = {
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
   },
 };
