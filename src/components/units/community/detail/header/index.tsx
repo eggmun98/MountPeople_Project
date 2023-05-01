@@ -20,7 +20,6 @@ export default function DetailHeader(): JSX.Element {
         ?.filter((el: string) => el)
         .map((el: string, dex: number) => (
           <D.ImageWrapper key={dex}>
-            <div></div>
             <img src={`https://storage.googleapis.com/${el}`}></img>
           </D.ImageWrapper>
         ))}
