@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import ReactPlayer from "react-player";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -64,4 +65,16 @@ export const ImageWrapper = styled.div`
     height: 200px;
     padding: 0 5%;
   }
+`;
+
+export const YoutubeWrapper = styled.div`
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+  padding: 0 20%;
+`;
+
+export const Youtube = styled(ReactPlayer)`
+  width: 100%;
+  height: 300px;
 `;
