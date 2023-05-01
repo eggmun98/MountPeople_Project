@@ -42,6 +42,12 @@ export const imagesState = atom<string[]>({
   default: ["", "", ""],
 });
 
+// 마켓 이미지
+export const imagesState02 = atom<string[]>({
+  key: "imagesState02",
+  default: ["", "", ""],
+});
+
 export const accessTokenState = atom({
   key: "accessTokenState",
   default: "",

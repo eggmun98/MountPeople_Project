@@ -1,4 +1,4 @@
-import { UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 import { IQuery } from "../../../../../commons/types/generated/types";
 
 export interface IData {
@@ -6,9 +6,10 @@ export interface IData {
   remarks: string;
   price: number;
   tags: string;
+  contents: string;
 }
 
 export interface IProps {
-  register?: UseFormRegister<IData>;
+  register: UseFormRegister<IData>;
   data: Pick<IQuery, "fetchUseditem"> | undefined;
 }
