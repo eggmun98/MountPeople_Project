@@ -7,19 +7,33 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 300px;
   border-bottom: 1px solid #979797;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: 600px;
+  }
 `;
 
 export const MainImgWrapper = styled.div`
   width: 50%;
-  height: 300px;
+  height: 100%;
   padding: 30px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #979797;
+  }
 `;
 
 export const ImgWrapper = styled.img`
+  width: 100%;
   height: 100%;
-  height: 300px;
   object-fit: cover;
-  /* border-right: 1px solid #979797;  */
+`;
+
+export const HiddenWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #c5c5c5;
 `;
 
 export const ContentsWrapper = styled.div`
@@ -28,6 +42,9 @@ export const ContentsWrapper = styled.div`
   width: 50%;
   height: 100%;
   padding: 30px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const TitleWrapper = styled.div`

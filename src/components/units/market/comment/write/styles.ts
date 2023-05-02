@@ -56,4 +56,22 @@ export const BottomWrapper = styled.div`
       transition: all 0.3s ease-in-out;
     }
   }
+
+  @media (max-width: 1023px) {
+    > input {
+      width: 80%;
+    }
+    > button {
+      width: 20%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    > input {
+      width: 75%;
+    }
+    > button {
+      width: 25%;
+    }
+  }
 `;

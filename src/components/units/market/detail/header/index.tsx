@@ -2,11 +2,16 @@ import * as D from "./styles";
 import { IProps } from "./types";
 
 export default function DetailHeader(props: IProps): JSX.Element {
-  console.log("마켓 디테일 데이터", props.data?.fetchUseditem?.tags);
   return (
     <D.Wrapper>
       <D.MainImgWrapper>
-        <D.ImgWrapper></D.ImgWrapper>
+        {props.data?.fetchUseditem.images ? (
+          <D.ImgWrapper
+            src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images[0]}`}
+          ></D.ImgWrapper>
+        ) : (
+          <D.HiddenWrapper></D.HiddenWrapper>
+        )}
       </D.MainImgWrapper>
       <D.ContentsWrapper>
         <D.TitleWrapper>
