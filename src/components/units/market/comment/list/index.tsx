@@ -28,7 +28,7 @@ export default function MarketList(): JSX.Element {
               <ML.TopWrapper>
                 <ML.NameWrapper>
                   <p>{el.user.name}</p>
-                  {/* <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p> */}
+                  <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
                 </ML.NameWrapper>
                 <ML.ButtonWrapper>
                   <button onClick={onClickWindow(dex, "question")}>
