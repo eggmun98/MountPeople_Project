@@ -96,6 +96,16 @@ export const RemarksWrapper = styled.div`
   > p {
     font-size: 14px;
   }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    > p {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const Heart = styled(AiFillHeart)`
