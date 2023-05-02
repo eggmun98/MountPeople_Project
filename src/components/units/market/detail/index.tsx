@@ -11,7 +11,7 @@ export default function MarketDetail(): JSX.Element {
     <Wrapper>
       <DetailHeader data={data}></DetailHeader>
       <DetailBody data={data}></DetailBody>
-      <DetailFooter></DetailFooter>
+      <DetailFooter data={data}></DetailFooter>
       <MarketComment></MarketComment>
     </Wrapper>
   );

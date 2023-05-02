@@ -8,9 +8,11 @@ export default function DetailHeader(props: IProps): JSX.Element {
   return (
     <D.Wrapper>
       <D.MainImgWrapper>
-        {props.data?.fetchUseditem.images ? (
+        {props.data?.fetchUseditem?.images?.[0] ? (
           <D.ImgWrapper
-            src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images[0]}`}
+            src={`https://storage.googleapis.com/${
+              props.data?.fetchUseditem.images[0] ?? ""
+            }`}
           ></D.ImgWrapper>
         ) : (
           <D.HiddenWrapper></D.HiddenWrapper>
