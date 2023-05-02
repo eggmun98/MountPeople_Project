@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 100vh;
+  background-color: whitesmoke;
 `;
 
 export const InWrapper = styled.div`
@@ -11,10 +13,11 @@ export const InWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 500px;
-  margin-top: 100px;
+  margin: auto 0px;
   padding: 30px 70px 60px 70px;
   border: 4px solid #3a6625;
   border-radius: 5px;
+  background-color: #fff;
   > form {
     display: flex;
     flex-direction: column;
