@@ -6,48 +6,40 @@ import {
   MenuWrapper,
   Wrapper,
 } from "./styles";
-import { useRouter } from "next/router";
-import { movePageMode } from "../../hooks/customs/movePageMode";
-import { useAllPageLink } from "../../hooks/customs/allPageLink";
+import { IProps } from "../types";
 
-export default function LayoutHeader(): JSX.Element {
-  const router = useRouter();
-  const { onClickMovePage } = movePageMode();
-  const { ALL_PAGE } = useAllPageLink();
-
-  const page = [];
-  page[0] = ALL_PAGE.community.includes(router.asPath);
-  page[1] = ALL_PAGE.market.includes(router.asPath);
-  page[2] = "/myPage".includes(router.asPath);
-
+export default function LayoutHeader(props: IProps): JSX.Element {
   return (
     <Wrapper>
       <div>
         <LogoWrapper>
           <Logo
             src="/layout/header/mpLogo.png"
-            onClick={onClickMovePage("/")}
+            onClick={props.onClickMovePage("/")}
           ></Logo>
         </LogoWrapper>
         <MenuWrapper>
           <MenuTitle
-            isActive={page[0]}
-            onClick={onClickMovePage(ALL_PAGE.community[2])}
+            isActive={props.page[0]}
+            onClick={props.onClickMovePage(props.allPage.community[2])}
           >
             커뮤니티
           </MenuTitle>
           <MenuTitle
-            isActive={page[1]}
-            onClick={onClickMovePage(ALL_PAGE.market[2])}
+            isActive={props.page[1]}
+            onClick={props.onClickMovePage(props.allPage.market[2])}
           >
             등산 마켓
           </MenuTitle>
-          <MenuTitle isActive={page[2]} onClick={onClickMovePage("/myPage")}>
+          <MenuTitle
+            isActive={props.page[2]}
+            onClick={props.onClickMovePage("/myPage")}
+          >
             마이 페이지
           </MenuTitle>
         </MenuWrapper>
         <LoginWrapper>
-          <button onClick={onClickMovePage("/sign/signIn")}>login</button>
+          <button onClick={props.onClickMovePage("/sign/signIn")}>login</button>
         </LoginWrapper>
       </div>
     </Wrapper>
