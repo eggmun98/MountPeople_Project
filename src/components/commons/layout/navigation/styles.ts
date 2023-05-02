@@ -13,6 +13,7 @@ export const MenuWrapper = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    padding: 0 10px;
     margin-top: 10px;
     background-color: #fff;
     cursor: pointer;
