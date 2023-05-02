@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 import * as D from "./styles";
-import { useDeleteBoardMode } from "../../../../commons/hooks/customs/community/useDeleteBoardMode";
 import { useDeleteProductMode } from "../../../../commons/hooks/customs/market/useDeleteProductMode";
 
 export default function DetailFooter(): JSX.Element {
