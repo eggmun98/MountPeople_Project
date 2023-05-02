@@ -1,12 +1,22 @@
+import { usePickUsedItemMode } from "../../../../commons/hooks/customs/market/usePickUsedItemMode";
 import * as D from "./styles";
 import { IProps } from "./types";
 
 export default function DetailHeader(props: IProps): JSX.Element {
-  console.log("마켓 디테일 데이터", props.data?.fetchUseditem?.tags);
+  const { onClickPick } = usePickUsedItemMode();
+
   return (
     <D.Wrapper>
       <D.MainImgWrapper>
-        <D.ImgWrapper></D.ImgWrapper>
+        {props.data?.fetchUseditem?.images?.[0] ? (
+          <D.ImgWrapper
+            src={`https://storage.googleapis.com/${
+              props.data?.fetchUseditem.images[0] ?? ""
+            }`}
+          ></D.ImgWrapper>
+        ) : (
+          <D.HiddenWrapper></D.HiddenWrapper>
+        )}
       </D.MainImgWrapper>
       <D.ContentsWrapper>
         <D.TitleWrapper>
@@ -15,11 +25,18 @@ export default function DetailHeader(props: IProps): JSX.Element {
         </D.TitleWrapper>
         <D.PriceWrapper>
           <p>{props.data?.fetchUseditem.price}</p>
-          <p>{props.data?.fetchUseditem.createdAt}</p>
+          <p>
+            {props.data?.fetchUseditem.createdAt
+              .slice(0, 10)
+              .replaceAll("-", ".")}
+          </p>
         </D.PriceWrapper>
         <D.RemarksWrapper>
           <p>{props.data?.fetchUseditem.remarks}</p>
-          <D.Heart></D.Heart>
+          <div>
+            <D.Heart onClick={onClickPick}></D.Heart>
+            <p>{props.data?.fetchUseditem.pickedCount}</p>
+          </div>
         </D.RemarksWrapper>
         <D.TagWrapper>
           {props.data?.fetchUseditem?.tags
