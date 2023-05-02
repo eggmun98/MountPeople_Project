@@ -19,10 +19,10 @@ export const Wrapper = styled.div`
     width: 100%;
     margin: 0 120px;
     @media (max-width: 1023px) {
-      margin: 0 80px;
+      margin: 0 60px;
     }
     @media (max-width: 767px) {
-      margin: 0 40px;
+      margin: 0 10px;
     }
   }
 `;
