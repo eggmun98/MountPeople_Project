@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
 import * as M from "./styles";
-import { FETCH_USED_ITEMS } from "../../../../commons/hooks/query/market/useQueryFetchUseditems";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
 } from "../../../../../commons/types/generated/types";
 import { IProps } from "./types";
+import { FETCH_USED_ITEMS } from "../../../../commons/hooks/query/market/useQueryFetchUsedItems";
 
 export default function MyItem(props: IProps): JSX.Element {
   const { data } = useQuery<
