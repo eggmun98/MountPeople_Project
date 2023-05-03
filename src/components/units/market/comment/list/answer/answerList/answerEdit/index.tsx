@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import * as A from "../styles";
 import { useUpdateAnswerMode } from "../../../../../../../commons/hooks/customs/market/useUpdateAnswerMode";
+import { IData, IProps } from "./types";
 
-export default function AnswerEdit(props): JSX.Element {
-  const { handleSubmit, register } = useForm();
+export default function AnswerEdit(props: IProps): JSX.Element {
+  const { handleSubmit, register } = useForm<IData>();
   const { onClickUpdateAnswer } = useUpdateAnswerMode();
 
   return (
