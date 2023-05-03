@@ -8,6 +8,12 @@ export const Wrapper = styled.div`
   border: 1px solid #c5c5c5;
   border-radius: 5px;
   color: #292929;
+
+  @media (max-width: 767px) {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #c5c5c5;
+  }
 `;
 
 export const ProfileWrapper = styled.div`
@@ -51,6 +57,9 @@ export const NameWrapper = styled.div`
     }
     > p:nth-of-type(3) {
       font-size: 14px;
+    }
+    @media (max-width: 767px) {
+      margin-left: 10px;
     }
   }
 

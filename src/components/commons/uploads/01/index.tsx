@@ -20,7 +20,6 @@ export default function Uploads01(props: IProps): JSX.Element {
 
   const onChangeImageUrls = (imageUrl: string, index: number): void => {
     const newImageUrls = [...props.imageUrls];
-    console.log("뉴 이미지 url", newImageUrls);
     newImageUrls[index] = imageUrl;
     props.setImageUrls(newImageUrls);
   };

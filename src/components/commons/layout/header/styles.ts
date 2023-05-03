@@ -18,6 +18,12 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     margin: 0 120px;
+    @media (max-width: 1023px) {
+      margin: 0 60px;
+    }
+    @media (max-width: 767px) {
+      margin: 0 10px;
+    }
   }
 `;
 
@@ -43,6 +49,9 @@ export const MenuWrapper = styled.div`
   width: 100%;
   cursor: pointer;
   user-select: none;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const MenuTitle = styled.div`

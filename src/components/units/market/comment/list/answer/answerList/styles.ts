@@ -15,6 +15,18 @@ export const LeftWrapper = styled.div`
     border-left: 1px solid #979797;
     border-bottom: 1px solid #979797;
   }
+  @media (max-width: 1023px) {
+    > div {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  @media (max-width: 767px) {
+    > div {
+      width: 10px;
+      height: 10px;
+    }
+  }
 `;
 
 export const AnswerWrapper = styled.div`

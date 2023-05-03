@@ -10,6 +10,7 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
     fetchUseditemQuestions(useditemId: $useditemId, page: $page) {
       _id
       contents
+      createdAt
       user {
         name
         _id
@@ -25,7 +26,7 @@ export const useQueryFetchQuestion = (): typeof result => {
     IQueryFetchUseditemQuestionsArgs
   >(FETCH_USED_ITEM_QUESTIONS, {
     variables: {
-      useditemId: router.query.page,
+      useditemId: String(router.query.page),
     },
   });
   return result;

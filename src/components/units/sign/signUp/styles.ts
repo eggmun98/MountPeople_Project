@@ -4,7 +4,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5% 0;
+  height: 100vh;
+  background-color: whitesmoke;
 `;
 
 export const InWrapper = styled.div`
@@ -12,10 +13,11 @@ export const InWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 500px;
-
+  margin: auto 0px;
   padding: 30px 70px 60px 70px;
   border: 4px solid #3a6625;
   border-radius: 5px;
+  background-color: #fff;
   > form {
     display: flex;
     flex-direction: column;
@@ -29,6 +31,10 @@ export const InWrapper = styled.div`
       border: 2px solid #3a6625;
       border-radius: 5px;
       outline-color: #3a6625;
+
+      @media (max-width: 767px) {
+        margin-top: 15px;
+      }
     }
     > div {
       margin-top: 5px;
@@ -59,6 +65,15 @@ export const InWrapper = styled.div`
       background-color: #3a6625;
     }
   }
+  @media (max-width: 767px) {
+    width: 400px;
+    padding: 20px 45px 30px 45px;
+  }
+
+  @media (max-width: 500px) {
+    width: 300px;
+    padding: 10px 30px 20px 30px;
+  }
 `;
 
 export const TopWrapper = styled.div`
@@ -82,5 +97,11 @@ export const TitleWrapper = styled.div`
   width: 70%;
   > h1 {
     color: #3a6625;
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
+    @media (max-width: 500px) {
+      font-size: 22px;
+    }
   }
 `;
