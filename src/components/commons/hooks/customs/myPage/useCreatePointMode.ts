@@ -6,7 +6,9 @@ declare const window: typeof globalThis & {
   IMP: any;
 };
 
-export const useCreatePointMode = () => {
+export const useCreatePointMode = (): {
+  onClickPayment: (point: number) => void;
+} => {
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINT_TRANSACTION_OF_LOADING

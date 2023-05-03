@@ -18,5 +18,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "no-unneeded-ternary": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/array-type": "off",
   },
 };

@@ -1,7 +1,9 @@
 import { useMutation } from "@apollo/client";
 import { RESET_USER_PASSWORD } from "../../mutation/myPage/useMutationResetUserPassword";
 
-export const useResetPasswordMode = () => {
+export const useResetPasswordMode = (): {
+  onClickPasswordEdit: (password: string) => () => Promise<void>;
+} => {
   const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
 
   const onClickPasswordEdit = (password: string) => async () => {

@@ -3,10 +3,11 @@ import * as A from "../answerList/styles";
 import { answerIndexState } from "../../../../../../commons/stores";
 import { useForm } from "react-hook-form";
 import { useCreateAnswerMode } from "../../../../../../commons/hooks/customs/market/useCrateAnswerMode";
+import { IData, IProps } from "./types";
 
-export default function AnswerWrite(props): JSX.Element {
+export default function AnswerWrite(props: IProps): JSX.Element {
   const [queAnswerIndex, setAnswerIndex] = useRecoilState(answerIndexState);
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register } = useForm<IData>();
   const { onClickCreateAnswer } = useCreateAnswerMode();
 
   const onClickCancel = (): void => {
