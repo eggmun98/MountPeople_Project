@@ -6,7 +6,7 @@ import WriteFooter from "./footer";
 import { useCreateProductMode } from "../../../commons/hooks/customs/market/useCreateProductMode";
 import { IData } from "./header/types";
 import { useQuery } from "@apollo/client";
-import { FETCH_USED_ITEM } from "../../../commons/hooks/query/market/useQueryFetchUseditem";
+import { FETCH_USED_ITEM } from "../../../commons/hooks/query/market/useQueryFetchUsedItem";
 import { useUpdateProductMode } from "../../../commons/hooks/customs/market/useUpdateProductMode";
 import { IProps } from "./types";
 
