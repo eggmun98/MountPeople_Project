@@ -9,8 +9,9 @@ import {
 import { useDeleteAnswerMode } from "../../../../../../commons/hooks/customs/market/useDeleteAnswerMode";
 import { useRecoilState } from "recoil";
 import { answerEditIndexState } from "../../../../../../commons/stores";
+import { IProps } from "./types";
 
-export default function AnswerList(props): JSX.Element {
+export default function AnswerList(props: IProps): JSX.Element {
   const { data } = useQuery<
     Pick<IQuery, "fetchUseditemQuestionAnswers">,
     IQueryFetchUseditemQuestionAnswersArgs
