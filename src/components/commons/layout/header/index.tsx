@@ -14,7 +14,7 @@ export default function LayoutHeader(props: IProps): JSX.Element {
       <div>
         <LogoWrapper>
           <Logo
-            src="/layout/header/mpLogo.png"
+            src="/layout/header/mainLogo08.png"
             onClick={props.onClickMovePage("/")}
           ></Logo>
         </LogoWrapper>

@@ -24,7 +24,7 @@ export default function SignUp(): JSX.Element {
         <U.TopWrapper>
           <U.ImageWrapper>
             <img
-              src="/layout/header/mpLogo.png"
+              src="/layout/header/mainLogo08.png"
               onClick={onClickMovePage("/communitys")}
             ></img>
           </U.ImageWrapper>

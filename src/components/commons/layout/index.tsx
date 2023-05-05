@@ -8,7 +8,7 @@ interface ILayoutProps {
   children: JSX.Element;
 }
 
-const HIDDEN_PAGE = ["/sign/signIn", "/sign/signUp"];
+const HIDDEN_PAGE = ["/sign/signIn/", "/sign/signUp/", "/"];
 
 export default function Layout(props: ILayoutProps): JSX.Element {
   const router = useRouter();

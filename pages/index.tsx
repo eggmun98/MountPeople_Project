@@ -1,3 +1,5 @@
-export default function Home(): JSX.Element {
-  return <div>git 테스트</div>;
+import Lending from "../src/components/units/landing";
+
+export default function LandingPage(): JSX.Element {
+  return <Lending></Lending>;
 }
