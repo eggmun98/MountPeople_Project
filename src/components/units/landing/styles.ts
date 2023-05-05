@@ -49,9 +49,8 @@ export const Container = styled.div`
 `;
 
 export const Btn = styled.button`
-  width: 16rem;
-  height: 5.2rem;
-  font-size: 1.6rem;
+  padding: 20px 50px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
   border: none;

@@ -8,7 +8,7 @@ export default function AreaD(): JSX.Element {
 
   return (
     <A.Container style={{ backgroundColor: "#fff" }}>
-      <video src="/landing/area01.mp4" muted autoPlay loop></video>
+      <video src="/landing/area04.mp4" muted autoPlay loop></video>
 
       <A.ScrollBox>
         <A.Btn onClick={onClickMovePage("/communitys")}>Start</A.Btn>
