@@ -3,7 +3,7 @@ import * as A from "../styles";
 export default function AreaC(): JSX.Element {
   return (
     <A.Container>
-      <video src="/landing/area07.mp4" muted autoPlay loop></video>
+      <video src="/landing/area03.mp4" muted autoPlay loop></video>
 
       <A.ScrollBox>
         <A.ScrollText>SCROLL</A.ScrollText>
