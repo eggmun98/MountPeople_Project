@@ -1,11 +1,11 @@
+import { openModalMode } from "../../../commons/hooks/customs/myPage/openModalMOde";
 import { useCreatePointMode } from "../../../commons/hooks/customs/myPage/useCreatePointMode";
 import { useResetPasswordMode } from "../../../commons/hooks/customs/myPage/useResetPasswordMode";
 import * as M from "./styles";
 import { IProps } from "./types";
 
 export default function MyPageBody(props: IProps): JSX.Element {
-  const { onClickPasswordEdit } = useResetPasswordMode();
-  const { onClickPayment } = useCreatePointMode();
+  const { onClickOpenModal } = openModalMode();
 
   return (
     <M.Wrapper>
@@ -19,10 +19,10 @@ export default function MyPageBody(props: IProps): JSX.Element {
           <p>{props.data?.fetchUserLoggedIn.email}</p>
           <p>{props.data?.fetchUserLoggedIn?.userPoint?.amount} P</p>
         </div>
-        <button>포인트 충전</button>
+        <button onClick={onClickOpenModal("point")}>포인트 충전</button>
       </M.NameWrapper>
       <M.PasswordWrapper>
-        <p>비밀번호 변경</p>
+        <p onClick={onClickOpenModal("pass")}>비밀번호 변경</p>
       </M.PasswordWrapper>
     </M.Wrapper>
   );
