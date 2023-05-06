@@ -93,3 +93,8 @@ export const isModeState = atom({
   key: "isModeState",
   default: false,
 });
+
+export const linkState = atom({
+  key: "linkState",
+  default: "",
+});

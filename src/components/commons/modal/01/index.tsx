@@ -1,11 +1,11 @@
 import { useRecoilState } from "recoil";
 import * as M from "./styles";
 import { messageState } from "../../stores";
-import { closeModalMode } from "../../hooks/customs/closeModalMode";
+import { selectionModalMode } from "../../hooks/customs/closeModalMode";
 
 export default function Modal01(): JSX.Element {
   const [message] = useRecoilState(messageState);
-  const { onClickClose } = closeModalMode();
+  const { onClickClose } = selectionModalMode();
 
   return (
     <>

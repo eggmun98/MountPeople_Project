@@ -3,6 +3,7 @@ import { CREATE_USED_ITEM_QUESTION_ANSWER } from "../../mutation/market/useMutat
 import { FETCH_USED_ITEM_QUESTIONS_ANSWERS } from "../../query/market/useQueryFetchUsedItemAnswers";
 import { useRecoilState } from "recoil";
 import { answerIndexState } from "../../../stores";
+import { selectionModalMode } from "../closeModalMode";
 
 export const useCreateAnswerMode = (): {
   onClickCreateAnswer: (
@@ -13,25 +14,30 @@ export const useCreateAnswerMode = (): {
     CREATE_USED_ITEM_QUESTION_ANSWER
   );
   const [answerIndex, setAnswerIndex] = useRecoilState(answerIndexState);
+  const { onClickModal } = selectionModalMode();
 
+  // 상품 답변 함수
   const onClickCreateAnswer =
     (useditemQuestionId: string) =>
     async (data: { contents: string }): Promise<void> => {
-      await createUsedItemQuestionAnswer({
-        variables: {
-          createUseditemQuestionAnswerInput: {
-            contents: data.contents,
+      try {
+        await createUsedItemQuestionAnswer({
+          variables: {
+            createUseditemQuestionAnswerInput: {
+              contents: data.contents,
+            },
+            useditemQuestionId,
           },
-          useditemQuestionId,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_USED_ITEM_QUESTIONS_ANSWERS,
-            variables: { useditemQuestionId },
-          },
-        ],
-      });
-      alert("대댓글 달았음");
+          refetchQueries: [
+            {
+              query: FETCH_USED_ITEM_QUESTIONS_ANSWERS,
+              variables: { useditemQuestionId },
+            },
+          ],
+        });
+      } catch (error) {
+        if (error instanceof Error) onClickModal(error.message)();
+      }
       setAnswerIndex(-1);
     };
 

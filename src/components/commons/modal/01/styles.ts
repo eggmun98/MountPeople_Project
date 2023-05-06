@@ -14,7 +14,7 @@ export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  padding: 60px 60px;
+  padding: 60px 60px 30px 60px;
   border-radius: 5px;
   top: 50%;
   left: 50%;
@@ -39,7 +39,7 @@ export const BottomWrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: 5rem;
+  margin-top: 2rem;
 
   > button {
     padding: 10px 20px;

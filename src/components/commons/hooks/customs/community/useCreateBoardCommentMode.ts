@@ -6,6 +6,7 @@ import {
   IMutation,
   IMutationCreateBoardCommentArgs,
 } from "../../../../../commons/types/generated/types";
+import { selectionModalMode } from "../closeModalMode";
 
 interface IData {
   writer: string;
@@ -21,26 +22,31 @@ export const useCreateBoardCommentMode = (): {
     Pick<IMutation, "createBoardComment">,
     IMutationCreateBoardCommentArgs
   >(CREATE_BOARD_COMMENTS);
+  const { onClickModal } = selectionModalMode();
 
+  // 게시글 댓글 등록 함수
   const onClickCreateCommentButton = async (data: IData): Promise<void> => {
-    await createBoardComment({
-      variables: {
-        boardId: String(router.query.page),
-        createBoardCommentInput: {
-          writer: data.writer,
-          password: data.password,
-          contents: data.contents,
-          rating: 1,
+    try {
+      await createBoardComment({
+        variables: {
+          boardId: String(router.query.page),
+          createBoardCommentInput: {
+            writer: data.writer,
+            password: data.password,
+            contents: data.contents,
+            rating: 1,
+          },
         },
-      },
-      refetchQueries: [
-        {
-          query: FETCH_BOARD_COMMENTS,
-          variables: { boardId: router.query.page },
-        },
-      ],
-    });
-    alert("댓글이 작성되었습니다.");
+        refetchQueries: [
+          {
+            query: FETCH_BOARD_COMMENTS,
+            variables: { boardId: router.query.page },
+          },
+        ],
+      });
+    } catch (error) {
+      if (error instanceof Error) onClickModal(error.message)();
+    }
   };
 
   return { onClickCreateCommentButton };

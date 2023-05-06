@@ -1,16 +1,32 @@
 import { useRecoilState } from "recoil";
-import { isModalState, isModalState02 } from "../../stores";
+import { isModalState, linkState, messageState } from "../../stores";
+import { useRouter } from "next/router";
 
-export const closeModalMode = (): {
+export const selectionModalMode = (): {
   onClickClose: () => void;
+  onClickModal: (str: string, link?: string) => () => void;
 } => {
-  const [_, setIsOpen] = useRecoilState(isModalState);
+  const [_, setIsModal] = useRecoilState(isModalState);
+  const [__, setIsMessages] = useRecoilState(messageState);
+  const [links, setLinks] = useRecoilState(linkState);
+  const router = useRouter();
 
   const onClickClose = (): void => {
-    setIsOpen((prev) => !prev);
+    setIsModal((prev) => !prev);
+    if (links) {
+      void router.push(links);
+      setLinks("");
+    }
+  };
+
+  const onClickModal = (str: string, link?: string) => async () => {
+    setLinks(link ?? "");
+    setIsMessages(str);
+    setIsModal((prev) => !prev);
   };
 
   return {
     onClickClose,
+    onClickModal,
   };
 };
