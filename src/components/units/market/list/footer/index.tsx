@@ -29,7 +29,7 @@ export default function ListFooter(props: IProps): JSX.Element {
             )}
             <L.TextWrapper>
               <p>{el.name}</p>
-              <p>{el.price.toLocaleString()}원</p>
+              <p>{el.price?.toLocaleString()}원</p>
             </L.TextWrapper>
           </L.ProductWrapper>
         ))}

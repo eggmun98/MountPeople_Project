@@ -60,3 +60,13 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+
+export const isModalState = atom({
+  key: "isModalState",
+  default: false,
+});
+
+export const messageState = atom({
+  key: "isMessageState",
+  default: "",
+});
