@@ -17,7 +17,7 @@ interface IToken {
 export const getAccessToken = async (): Promise<string | undefined> => {
   try {
     const graphQLClient = new GraphQLClient(
-      "https://backend11.codebootcamp.co.kr/graphql06",
+      "https://backend-practice.codebootcamp.co.kr/graphql",
       {
         credentials: "include",
       }
