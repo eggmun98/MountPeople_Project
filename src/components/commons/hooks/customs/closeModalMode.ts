@@ -1,15 +1,13 @@
 import { useRecoilState } from "recoil";
-import { isModalState } from "../../stores";
+import { isModalState, isModalState02 } from "../../stores";
 
 export const closeModalMode = (): {
-  onClickClose: (num: string) => () => void;
+  onClickClose: () => void;
 } => {
-  const [isOpen, setIsOpen] = useRecoilState(isModalState);
+  const [_, setIsOpen] = useRecoilState(isModalState);
 
-  const onClickClose = (num: string) => (): void => {
-    if (num === "01") {
-      setIsOpen((prev) => !prev);
-    }
+  const onClickClose = (): void => {
+    setIsOpen((prev) => !prev);
   };
 
   return {

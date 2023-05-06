@@ -4,30 +4,31 @@ import LayoutNavigation from "./navigation";
 import { movePageMode } from "../hooks/customs/movePageMode";
 import { useAllPageLink } from "../hooks/customs/allPageLink";
 import Modal01 from "../modal/01";
-import { isModalState } from "../stores";
+import { isModalState, isModalState02 } from "../stores";
 import { useRecoilState } from "recoil";
-
-interface ILayoutProps {
-  children: JSX.Element;
-}
+import Modal02 from "../modal/02";
+import { useState } from "react";
+import { ILayoutProps } from "./types";
 
 const HIDDEN_PAGE = ["/sign/signIn/", "/sign/signUp/", "/"];
 
 export default function Layout(props: ILayoutProps): JSX.Element {
-  const [isOpen, setIsOpen] = useRecoilState(isModalState);
-
-  const router = useRouter();
-  const hiddenPage = HIDDEN_PAGE.includes(router.asPath);
+  const [isOpen] = useRecoilState(isModalState);
+  const [isOpen02] = useRecoilState(isModalState02);
   const { onClickMovePage } = movePageMode();
   const { ALL_PAGE } = useAllPageLink();
-  const page = [
+  const router = useRouter();
+  const hiddenPage = HIDDEN_PAGE.includes(router.asPath);
+  const [page] = useState([
     ALL_PAGE.community.includes(router.asPath),
     ALL_PAGE.market.includes(router.asPath),
     "/myPage".includes(router.asPath),
-  ];
+  ]);
+
   return (
     <>
       {isOpen && <Modal01></Modal01>}
+      {isOpen02 && <Modal02></Modal02>}
 
       {!hiddenPage && (
         <>
