@@ -9,14 +9,14 @@ export default function Modal01(): JSX.Element {
 
   return (
     <>
-      <M.Background onClick={onClickClose("01")}></M.Background>
+      <M.Background onClick={onClickClose}></M.Background>
       <M.Wrapper>
-        <M.Close onClick={onClickClose("01")}></M.Close>
+        <M.Close onClick={onClickClose}></M.Close>
         <M.MiddleWrapper>
           <p>{message}</p>
         </M.MiddleWrapper>
         <M.BottomWrapper>
-          <button onClick={onClickClose("01")}>확인</button>
+          <button onClick={onClickClose}>확인</button>
         </M.BottomWrapper>
       </M.Wrapper>
     </>

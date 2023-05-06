@@ -1,20 +1,26 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { FETCH_USER_LOGGED_IN } from "../../query/useQueryFetchUsedLoggedIn";
 import { CREATE_POINT_TRANSACTION_OF_LOADING } from "../../mutation/myPage/useMutationCreatePointTransactionOfLoading";
+import { openModalMode } from "./openModalMOde";
+import { useRecoilState } from "recoil";
+import { isModalState, messageState } from "../../../stores";
 
 declare const window: typeof globalThis & {
   IMP: any;
 };
 
 export const useCreatePointMode = (): {
-  onClickPayment: (point: number) => void;
+  onClickPayment: (datas: { point: number }) => void;
 } => {
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
+  const { onClickCloseModal } = openModalMode();
+  const [_, setIsModal] = useRecoilState(isModalState);
+  const [__, setIsMessage] = useRecoilState(messageState);
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINT_TRANSACTION_OF_LOADING
   );
 
-  const onClickPayment = (point: number) => (): void => {
+  const onClickPayment = (datas: { point: number }): void => {
     const IMP = window.IMP;
     IMP.init("imp49910675");
 
@@ -23,7 +29,7 @@ export const useCreatePointMode = (): {
         pg: "kakaopay",
         pay_method: "card",
         name: "갤럭시s10",
-        amount: point,
+        amount: Number(datas.point),
         buyer_email: data?.fetchUserLoggedIn.email,
         buyer_name: data?.fetchUserLoggedIn.name,
         buyer_tel: "010-4242-4242",
@@ -38,9 +44,13 @@ export const useCreatePointMode = (): {
               impUid: rsp.imp_uid,
             },
           });
-          alert("결제에 성공하였습니다.");
+          onClickCloseModal();
+          setIsModal(true);
+          setIsMessage("결제에 성공하였습니다.");
         } else {
-          alert("결제에 실패하였습니다.");
+          onClickCloseModal();
+          setIsModal(true);
+          setIsMessage("결제에 실패하였습니다.");
         }
       }
     );
