@@ -1,26 +1,30 @@
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../mutation/useMutationCreateUser";
-import { useRouter } from "next/router";
 import { IData } from "../../../units/sign/signUp/types";
+import { selectionModalMode } from "./closeModalMode";
 
 export const useSignUpMode = (): {
   onClickSignUp: (data: IData) => Promise<void>;
 } => {
   const [createUser] = useMutation(CREATE_USER);
-  const router = useRouter();
+  const { onClickModal } = selectionModalMode();
 
+  // 회원가입 함수
   const onClickSignUp = async (data: IData): Promise<void> => {
-    await createUser({
-      variables: {
-        createUserInput: {
-          email: data.email,
-          password: data.password,
-          name: data.name,
+    try {
+      await createUser({
+        variables: {
+          createUserInput: {
+            email: data.email,
+            password: data.password,
+            name: data.name,
+          },
         },
-      },
-    });
-    alert("회원가입 되었습니다.");
-    await router.push("/communitys");
+      });
+      onClickModal("회원가입 하였습니다.", "/communitys")();
+    } catch (error) {
+      if (error instanceof Error) onClickModal(error.message)();
+    }
   };
 
   return {
