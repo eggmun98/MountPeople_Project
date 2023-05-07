@@ -10,8 +10,10 @@ import { FETCH_USED_ITEM } from "../../../commons/hooks/query/market/useQueryFet
 import { useUpdateProductMode } from "../../../commons/hooks/customs/market/useUpdateProductMode";
 import { IProps } from "./types";
 import { useRouter } from "next/router";
+import { useAuth } from "../../../commons/hooks/customs/useAuth";
 
 export default function MarketWrite(props: IProps): JSX.Element {
+  useAuth();
   const router = useRouter();
   const { handleSubmit, register, setValue } = useForm<IData>();
   const { onClickCreateProduct } = useCreateProductMode();
