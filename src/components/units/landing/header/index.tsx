@@ -11,7 +11,6 @@ export default function Header(): JSX.Element {
   const { onClickLogout } = useLogoutMode();
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
-  console.log("유저 로그인 데이터", data);
 
   return (
     <Wrapper>
