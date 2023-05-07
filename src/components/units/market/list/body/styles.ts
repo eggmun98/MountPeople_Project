@@ -30,9 +30,12 @@ export const TitleWrapper = styled.div`
     padding: 6px;
     color: #292929;
     border: 1px solid #3a6625;
+    border-radius: 5px;
     background-color: #fff;
     :hover {
-      color: #3a6625;
+      background-color: #3a6625;
+      color: #fff;
+      transition: all 0.5s ease-in-out;
     }
   }
 `;

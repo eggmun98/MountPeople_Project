@@ -29,7 +29,7 @@ export default function SignUp(): JSX.Element {
             ></img>
           </U.ImageWrapper>
           <U.TitleWrapper>
-            <h1>MountainPeople</h1>
+            <h1>MountPeople</h1>
           </U.TitleWrapper>
         </U.TopWrapper>
         <form onSubmit={handleSubmit(onClickSignUp)}>
