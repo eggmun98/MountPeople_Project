@@ -1,6 +1,4 @@
-import { openModalMode } from "../../../commons/hooks/customs/myPage/openModalMOde";
-import { useCreatePointMode } from "../../../commons/hooks/customs/myPage/useCreatePointMode";
-import { useResetPasswordMode } from "../../../commons/hooks/customs/myPage/useResetPasswordMode";
+import { openModalMode } from "../../../commons/hooks/customs/myPage/openModalMode";
 import * as M from "./styles";
 import { IProps } from "./types";
 

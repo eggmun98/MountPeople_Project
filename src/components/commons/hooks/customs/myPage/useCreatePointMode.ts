@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { FETCH_USER_LOGGED_IN } from "../../query/useQueryFetchUsedLoggedIn";
 import { CREATE_POINT_TRANSACTION_OF_LOADING } from "../../mutation/myPage/useMutationCreatePointTransactionOfLoading";
-import { openModalMode } from "./openModalMOde";
+import { openModalMode } from "./openModalMode";
 import { useRecoilState } from "recoil";
 import { isModalState, messageState } from "../../../stores";
 

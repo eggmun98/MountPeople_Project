@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { RESET_USER_PASSWORD } from "../../mutation/myPage/useMutationResetUserPassword";
-import { openModalMode } from "./openModalMOde";
+import { openModalMode } from "./openModalMode";
 import { useRecoilState } from "recoil";
 import { isModalState, messageState } from "../../../stores";
 
