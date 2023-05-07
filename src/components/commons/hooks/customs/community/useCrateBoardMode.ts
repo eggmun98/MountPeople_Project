@@ -2,6 +2,8 @@ import { useRecoilState } from "recoil";
 import { IData } from "../../../../units/community/write/types";
 import { useMutationCrateBoard } from "../../mutation/community/useMutationCrateBoard";
 import { addressState, imagesState, zipCodeState } from "../../../stores";
+import { selectionModalMode } from "../closeModalMode";
+import { FETCH_BOARDS } from "../../query/community/useQueryFetchBoards";
 
 export const useCreateBoardMode = (): {
   onClickCreateBoard: (data: IData) => Promise<void>;
@@ -10,10 +12,12 @@ export const useCreateBoardMode = (): {
   const [zipcode] = useRecoilState(zipCodeState);
   const [address] = useRecoilState(addressState);
   const [imageUrls] = useRecoilState(imagesState);
+  const { onClickModal } = selectionModalMode();
 
+  // 게시글 작성 함수
   const onClickCreateBoard = async (data: IData): Promise<void> => {
     try {
-      await createBoard({
+      const result = await createBoard({
         variables: {
           createBoardInput: {
             writer: data.writer,
@@ -29,12 +33,21 @@ export const useCreateBoardMode = (): {
             },
           },
         },
+        refetchQueries: [
+          {
+            query: FETCH_BOARDS,
+          },
+        ],
       });
-      alert("게시글 작성하였습니다.");
+      onClickModal(
+        "게시글을 작성하였습니다.",
+        `/communitys/community/${String(result?.data?.createBoard._id)}`
+      )();
     } catch (error) {
-      console.error(error);
+      if (error instanceof Error) onClickModal(error.message)();
     }
   };
+
   return {
     onClickCreateBoard,
   };

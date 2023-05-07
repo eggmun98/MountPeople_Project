@@ -7,10 +7,10 @@ export const useMapCreationMode = (): {
   isOpen: boolean;
   mapCreation: () => void;
 } => {
+  const myKey = String(process.env.NEXT_PUBLIC_API_KEY);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const myKey = String(process.env.NEXT_PUBLIC_API_KEY);
-
+  // 지도 생성 함수
   const mapCreation = (): void => {
     useEffect(() => {
       const script = document.createElement("script");

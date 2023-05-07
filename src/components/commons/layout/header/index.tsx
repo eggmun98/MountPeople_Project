@@ -7,14 +7,23 @@ import {
   Wrapper,
 } from "./styles";
 import { IProps } from "../types";
+import { useQuery } from "@apollo/client";
+import { FETCH_USER_LOGGED_IN } from "../../hooks/query/useQueryFetchUsedLoggedIn";
+import { IQuery } from "../../../../commons/types/generated/types";
+import { useLogoutMode } from "../../hooks/customs/useLogoutMode";
 
 export default function LayoutHeader(props: IProps): JSX.Element {
+  const { onClickLogout } = useLogoutMode();
+  const { data } =
+    useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
+  console.log("page", props.page);
+
   return (
     <Wrapper>
       <div>
         <LogoWrapper>
           <Logo
-            src="/layout/header/mpLogo.png"
+            src="/layout/header/mainLogo08.png"
             onClick={props.onClickMovePage("/")}
           ></Logo>
         </LogoWrapper>
@@ -39,7 +48,13 @@ export default function LayoutHeader(props: IProps): JSX.Element {
           </MenuTitle>
         </MenuWrapper>
         <LoginWrapper>
-          <button onClick={props.onClickMovePage("/sign/signIn")}>login</button>
+          {data?.fetchUserLoggedIn ? (
+            <button onClick={onClickLogout}>logout</button>
+          ) : (
+            <button onClick={props.onClickMovePage("/sign/signIn")}>
+              login
+            </button>
+          )}
         </LoginWrapper>
       </div>
     </Wrapper>

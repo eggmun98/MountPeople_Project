@@ -6,7 +6,6 @@ import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import { useState } from "react";
 import { useMapCreationMode } from "../../../../commons/hooks/customs/useMapCreationMode";
-import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 export default function WriteBody(props: IProps): JSX.Element {
   const { mapCreation, isOpen } = useMapCreationMode();
@@ -29,25 +28,6 @@ export default function WriteBody(props: IProps): JSX.Element {
 
   return (
     <W.OutWrapper>
-      <W.MapWrapper>
-        {isOpen && (
-          <Map
-            center={{
-              lat: 33.450701,
-              lng: 126.570667,
-            }}
-            style={{
-              width: "100%",
-              height: "160px",
-            }}
-            level={3}
-          >
-            <MapMarker
-              position={{ lat: 33.450701, lng: 126.570667 }}
-            ></MapMarker>
-          </Map>
-        )}
-      </W.MapWrapper>
       <W.Wrapper>
         <W.TopWrapper>
           <input

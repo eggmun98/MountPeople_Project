@@ -27,6 +27,7 @@ interface IArgs {
   ) => Promise<ApolloQueryResult<TFetchData>>;
 }
 
+// 무한 스크롤 함수
 export const useScrollMode = (
   args: IArgs
 ): {

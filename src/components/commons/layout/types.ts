@@ -1,5 +1,3 @@
-import path from "path";
-
 export interface IProps {
   page: boolean[];
   allPage: {
@@ -7,4 +5,8 @@ export interface IProps {
     market: string[];
   };
   onClickMovePage: (link: string) => () => Promise<void>;
+}
+
+export interface ILayoutProps {
+  children: JSX.Element;
 }

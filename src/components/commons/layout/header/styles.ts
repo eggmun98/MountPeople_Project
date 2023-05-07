@@ -66,6 +66,7 @@ export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100px;
   > button {
     width: 100px;
     height: 40px;

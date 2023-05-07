@@ -5,8 +5,10 @@ import MyPageHeader from "./header";
 import { Wrapper } from "./styles";
 import { FETCH_USER_LOGGED_IN } from "../../commons/hooks/query/useQueryFetchUsedLoggedIn";
 import { IQuery } from "../../../commons/types/generated/types";
+import { useAuth } from "../../commons/hooks/customs/useAuth";
 
 export default function MyPageUI(): JSX.Element {
+  useAuth();
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 

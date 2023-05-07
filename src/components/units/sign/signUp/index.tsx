@@ -24,12 +24,12 @@ export default function SignUp(): JSX.Element {
         <U.TopWrapper>
           <U.ImageWrapper>
             <img
-              src="/layout/header/mpLogo.png"
+              src="/layout/header/mainLogo08.png"
               onClick={onClickMovePage("/communitys")}
             ></img>
           </U.ImageWrapper>
           <U.TitleWrapper>
-            <h1>MountainPeople</h1>
+            <h1>MountPeople</h1>
           </U.TitleWrapper>
         </U.TopWrapper>
         <form onSubmit={handleSubmit(onClickSignUp)}>
