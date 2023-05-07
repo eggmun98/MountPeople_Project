@@ -1,18 +1,20 @@
 import { useRouter } from "next/router";
 import * as A from "../styles";
 import { movePageMode } from "../../../commons/hooks/customs/movePageMode";
+import { IProps } from "./types";
 
-export default function AreaD(): JSX.Element {
+export default function AreaD(props: IProps): JSX.Element {
   const router = useRouter();
   const { onClickMovePage } = movePageMode();
 
   return (
-    <A.Container style={{ backgroundColor: "#fff" }}>
+    <A.Container ref={props.scrollRefD}>
       <video src="/landing/area04.mp4" muted autoPlay loop></video>
-
-      <A.ScrollBox>
+      <div>
+        <h2>Mount People</h2>
         <A.Btn onClick={onClickMovePage("/communitys")}>Start</A.Btn>
-      </A.ScrollBox>
+      </div>
+      <A.ScrollBox></A.ScrollBox>
     </A.Container>
   );
 }

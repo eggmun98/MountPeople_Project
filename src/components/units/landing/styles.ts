@@ -46,10 +46,33 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    > h1 {
+      color: #fff;
+      font-size: 40px;
+      font-family: "suite01";
+      font-weight: 400;
+    }
+    > h2 {
+      color: #fff;
+      font-size: 60px;
+      font-family: "mont01";
+    }
+    > h3 {
+      color: #fff;
+      font-size: 30px;
+      font-family: "suite01";
+      font-weight: 400;
+    }
+  }
 `;
 
 export const Btn = styled.button`
-  padding: 20px 50px;
+  padding: 15px 30px;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
@@ -66,6 +89,8 @@ export const ScrollBox = styled.div`
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.7;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const ScrollText = styled.p`

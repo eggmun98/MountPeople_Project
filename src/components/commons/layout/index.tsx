@@ -19,11 +19,13 @@ export default function Layout(props: ILayoutProps): JSX.Element {
   const { ALL_PAGE } = useAllPageLink();
   const router = useRouter();
   const hiddenPage = HIDDEN_PAGE.includes(router.asPath);
-  const [page] = useState([
+  const page = [
     ALL_PAGE.community.includes(router.asPath),
     ALL_PAGE.market.includes(router.asPath),
-    "/myPage".includes(router.asPath),
-  ]);
+    "/myPage/".includes(router.asPath),
+  ];
+  console.log("원본 page", page);
+  console.log(ALL_PAGE);
 
   return (
     <>

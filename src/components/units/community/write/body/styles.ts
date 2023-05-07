@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 100%; // 70% 예정
 
   @media (max-width: 767px) {
     width: 100%;
