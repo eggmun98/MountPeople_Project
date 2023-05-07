@@ -3,7 +3,7 @@ import { isModeState } from "../../stores";
 import { useRecoilState } from "recoil";
 import { useCreatePointMode } from "../../hooks/customs/myPage/useCreatePointMode";
 import { useResetPasswordMode } from "../../hooks/customs/myPage/useResetPasswordMode";
-import { openModalMode } from "../../hooks/customs/myPage/openModalMOde";
+import { openModalMode } from "../../hooks/customs/myPage/openModalMode";
 import { useForm } from "react-hook-form";
 import Script from "next/script";
 
