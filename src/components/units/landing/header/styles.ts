@@ -73,3 +73,14 @@ export const LoginWrapper = styled.div`
     }
   }
 `;
+
+export const LogoutBtn = styled.div`
+  color: #fff;
+  background-color: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  :hover {
+    color: #3a6625;
+  }
+`;
