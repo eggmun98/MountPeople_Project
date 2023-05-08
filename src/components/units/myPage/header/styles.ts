@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
     font-weight: 400;
     margin-right: 20px;
     color: 292929;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #3a6625;
     }

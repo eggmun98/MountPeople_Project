@@ -30,7 +30,9 @@ export default function Paginations01(props: IProps): JSX.Element {
 
   return (
     <>
-      <div onClick={onClickPrevPage}>{"<"}</div>
+      <div onClick={onClickPrevPage} style={{ userSelect: "none" }}>
+        {"<"}
+      </div>
       {new Array(10).fill(1).map(
         (_, index) =>
           index + startPage <= lastPage && (
@@ -44,7 +46,9 @@ export default function Paginations01(props: IProps): JSX.Element {
             </Button>
           )
       )}
-      <div onClick={onClickNextPage}>{">"}</div>
+      <div onClick={onClickNextPage} style={{ userSelect: "none" }}>
+        {">"}
+      </div>
     </>
   );
 }

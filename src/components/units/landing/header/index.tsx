@@ -15,7 +15,7 @@ export default function Header(): JSX.Element {
   return (
     <Wrapper>
       <div>
-        <H.LogoWrapper>
+        <H.LogoWrapper onClick={onClickMovePage("/communitys")}>
           <H.Logo src="/layout/header/mainLogo08.png"></H.Logo>
         </H.LogoWrapper>
 
