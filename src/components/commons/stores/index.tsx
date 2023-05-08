@@ -105,3 +105,9 @@ export const isModeState = atom({
   key: "isModeState",
   default: false,
 });
+
+// 커뮤니티 게시글 번호
+export const numberState = atom<number>({
+  key: "numberState",
+  default: 1,
+});

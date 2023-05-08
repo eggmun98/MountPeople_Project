@@ -33,6 +33,13 @@ export default function ListFooter(props: IProps): JSX.Element {
             </L.TextWrapper>
           </L.ProductWrapper>
         ))}
+        {data?.fetchUseditems.length <= 3 && (
+          <>
+            <L.HiddenWrapper></L.HiddenWrapper>
+            <L.HiddenWrapper></L.HiddenWrapper>
+            <L.HiddenWrapper></L.HiddenWrapper>
+          </>
+        )}
       </L.Wrapper>
     </L.Scroll>
   );

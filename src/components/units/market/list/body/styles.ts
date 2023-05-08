@@ -66,17 +66,21 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 24%;
+  width: 23%;
   height: 300px;
   margin: 20px 0.1px;
 
   @media (max-width: 1023px) {
-    width: 32%;
+    width: 30%;
     height: 250px;
   }
 
   @media (max-width: 767px) {
-    width: 49%;
+    width: 45%;
+    height: 200px;
+  }
+  @media (max-width: 450px) {
+    width: 100%;
     height: 200px;
   }
 `;
