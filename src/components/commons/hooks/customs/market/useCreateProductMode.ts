@@ -49,10 +49,10 @@ export const useCreateProductMode = (): {
           },
         ],
       });
-      onClickModal(
-        "상품을 등록하였습니다.",
-        `/markets/market/${String(result.data.createUseditem._id)}`
-      )();
+      // onClickModal(
+      //   "상품을 등록하였습니다.",
+      //   `/markets/market/${String(result.data.createUseditem._id)}`
+      // )();
     } catch (error) {
       if (error instanceof Error) onClickModal(error.message, "/markets")();
     }
