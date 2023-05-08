@@ -16,8 +16,6 @@ export default function ListBody(): JSX.Element {
     price: number;
   }
 
-  console.log("베스트 상품", data);
-
   return (
     <L.Wrapper>
       <L.TitleWrapper>

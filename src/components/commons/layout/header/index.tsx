@@ -16,7 +16,6 @@ export default function LayoutHeader(props: IProps): JSX.Element {
   const { onClickLogout } = useLogoutMode();
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
-  console.log("page", props.page);
 
   return (
     <Wrapper>
