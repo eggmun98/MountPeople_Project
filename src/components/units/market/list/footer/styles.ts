@@ -14,7 +14,8 @@ export const ProductWrapper = styled.div`
   width: 24%;
   height: 300px;
   margin: 20px 0.1px;
-
+  cursor: pointer;
+  user-select: none;
   @media (max-width: 1023px) {
     width: 32%;
     height: 250px;

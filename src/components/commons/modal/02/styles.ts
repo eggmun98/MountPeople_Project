@@ -17,7 +17,7 @@ export const Wrapper = styled.form`
   padding: 60px 60px 30px 60px;
   border-radius: 5px;
   top: 50%;
-  left: 50%;
+  left: 55%;
   margin-top: -278.5px;
   margin-left: -200px;
   z-index: 999;

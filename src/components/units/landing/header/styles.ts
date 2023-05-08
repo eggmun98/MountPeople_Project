@@ -52,6 +52,7 @@ export const LoginWrapper = styled.div`
   > p {
     color: #fff;
     margin-right: 15px;
+    user-select: none;
   }
 
   > button {

@@ -21,12 +21,9 @@ export default function SignIn(): JSX.Element {
   return (
     <I.Wrapper>
       <I.InWrapper>
-        <I.TopWrapper>
+        <I.TopWrapper onClick={onClickMovePage("/communitys")}>
           <I.ImageWrapper>
-            <img
-              src="/layout/header/mainLogo08.png"
-              onClick={onClickMovePage("/communitys")}
-            ></img>
+            <img src="/layout/header/mainLogo08.png"></img>
           </I.ImageWrapper>
           <I.TitleWrapper>
             <h1>MountPeople</h1>
@@ -43,6 +40,7 @@ export default function SignIn(): JSX.Element {
           <input
             {...register("password")}
             placeholder="비밀번호를 입력하세요."
+            type="password"
           ></input>
           <div>
             <p>{errors.password?.message}</p>

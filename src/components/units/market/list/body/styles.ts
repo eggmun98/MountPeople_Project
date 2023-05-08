@@ -32,6 +32,8 @@ export const TitleWrapper = styled.div`
     border: 1px solid #3a6625;
     border-radius: 5px;
     background-color: #fff;
+    cursor: pointer;
+    user-select: none;
     :hover {
       background-color: #3a6625;
       color: #fff;
@@ -44,6 +46,8 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
   @media (max-width: 1023px) {
     flex-wrap: wrap;
     > div:last-of-type {

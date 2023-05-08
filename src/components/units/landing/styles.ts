@@ -51,22 +51,27 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     z-index: 100;
+    user-select: none;
+    padding: 0 30px;
     > h1 {
       color: #fff;
       font-size: 40px;
       font-family: "suite01";
       font-weight: 400;
+      text-align: center;
     }
     > h2 {
       color: #fff;
       font-size: 60px;
       font-family: "mont01";
+      text-align: center;
     }
     > h3 {
       color: #fff;
       font-size: 30px;
       font-family: "suite01";
       font-weight: 400;
+      text-align: center;
     }
   }
 `;

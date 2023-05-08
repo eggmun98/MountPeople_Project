@@ -21,20 +21,31 @@ export const ProfileWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red;  */
   width: 200px;
+  > input {
+    display: none;
+  }
+  > img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   > div {
     width: 120px;
     height: 120px;
     margin-bottom: 20px;
     border-radius: 50%;
-    background-color: #979797;
+    background-color: #e2e2e2;
   }
   > button {
     width: 100px;
     padding: 5px;
     border: 1px solid #3a6625;
     background-color: #fff;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #fff;
       background-color: #3a6625;
@@ -47,6 +58,7 @@ export const NameWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 10px;
   > div {
     > p {
       margin-top: 10px;
@@ -68,6 +80,8 @@ export const NameWrapper = styled.div`
     padding: 5px;
     border: 1px solid #3a6625;
     background-color: #fff;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #fff;
       background-color: #3a6625;
@@ -85,6 +99,8 @@ export const PasswordWrapper = styled.div`
   > p {
     font-size: 14px;
     color: #979797;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #3a6625;
     }

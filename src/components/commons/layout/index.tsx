@@ -24,8 +24,6 @@ export default function Layout(props: ILayoutProps): JSX.Element {
     ALL_PAGE.market.includes(router.asPath),
     "/myPage/".includes(router.asPath),
   ];
-  console.log("원본 page", page);
-  console.log(ALL_PAGE);
 
   return (
     <>

@@ -49,6 +49,12 @@ export const imagesState02 = atom<string[]>({
   default: ["", "", ""],
 });
 
+// 프로필 이미지 변수
+export const imagesState03 = atom<string>({
+  key: "imagesState03",
+  default: "",
+});
+
 // 엑세스 토큰 변수
 export const accessTokenState = atom({
   key: "accessTokenState",
@@ -64,37 +70,38 @@ export const restoreAccessTokenLoadable = selector({
   },
 });
 
-// 에러 메세지 모달
+// 모달01 - 에러 메세지 모달창 온오프 변수
 export const isModalState = atom({
   key: "isModalState",
   default: false,
 });
 
-// 모달창 메세지 변수
+// 모달01 - 메세지 변수
 export const messageState = atom({
   key: "isMessageState",
   default: "",
 });
 
-// 비밀번호 변경 모달 + 충전 모드 모달
+// 모달01 - 링크 변수
+export const linkState = atom({
+  key: "linkState",
+  default: "",
+});
+
+// 모달02 - 비밀번호 변경, 충전 모달 온오프 변수
 export const isModalState02 = atom({
   key: "isModalState02",
   default: false,
 });
 
-// 비밀번호 변경 함수, 충전 함수 공용 변수
+// 모달02 - 비밀번호 변경 함수, 충전 함수 공용 변수
 export const inputState = atom({
   key: "inputState",
   default: "",
 });
 
-// 비밀번호 변경 모드인지 충전 모드인지 구분 변수
+// 모달02 - 비밀번호 변경 모드인지 충전 모드인지 구분 변수
 export const isModeState = atom({
   key: "isModeState",
   default: false,
-});
-
-export const linkState = atom({
-  key: "linkState",
-  default: "",
 });
