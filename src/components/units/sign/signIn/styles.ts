@@ -46,9 +46,11 @@ export const InWrapper = styled.div`
     }
     > p:last-of-type {
       margin-top: 20px;
-      font-size: 1px;
+      font-size: 12px;
       border-bottom: 1px solid #c5c5c5;
-      color: #c5c5c5;
+      color: #979797;
+      cursor: pointer;
+      user-select: none;
       :hover {
         color: #3a6625;
       }
@@ -62,6 +64,8 @@ export const InWrapper = styled.div`
       border-radius: 5px;
       color: #fff;
       background-color: #3a6625;
+      cursor: pointer;
+      user-select: none;
     }
   }
 
@@ -82,6 +86,8 @@ export const TopWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const ImageWrapper = styled.div`
