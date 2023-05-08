@@ -1,9 +1,12 @@
+import { useRecoilState } from "recoil";
 import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";
 import { ContentsWrapper, TitleWrapper, Wrapper } from "./styles";
 import { IProps } from "./types";
+import { numberState } from "../../../../commons/stores";
 
 export default function ListBody(props: IProps): JSX.Element {
   const { onClickMovePage } = movePageMode();
+  const [number] = useRecoilState(numberState);
 
   return (
     <Wrapper>
@@ -18,7 +21,7 @@ export default function ListBody(props: IProps): JSX.Element {
           key={dex}
           onClick={onClickMovePage(`/communitys/community/${el._id}`)}
         >
-          <p>{dex + 1}</p>
+          <p>{props.count - number * 10 - dex + 10}</p>
           <p>{el.title}</p>
           <p>{el.writer}</p>
           <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
