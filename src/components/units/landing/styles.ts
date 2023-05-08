@@ -51,6 +51,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     z-index: 100;
+    user-select: none;
     > h1 {
       color: #fff;
       font-size: 40px;

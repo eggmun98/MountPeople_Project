@@ -7,4 +7,5 @@ interface IProps {
 export const Button = styled.div`
   color: ${(props: IProps) => (props.isActive ? "#3a6625" : "black")};
   cursor: pointer;
+  user-select: none;
 `;

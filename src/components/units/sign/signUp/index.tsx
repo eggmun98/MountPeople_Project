@@ -47,6 +47,7 @@ export default function SignUp(): JSX.Element {
           <input
             {...register("password")}
             placeholder="비밀번호를 입력하세요."
+            type="password"
           ></input>
           <div>
             <p>{errors.password?.message}</p>
@@ -54,6 +55,7 @@ export default function SignUp(): JSX.Element {
           <input
             {...register("passwordCheck")}
             placeholder="비밀번호를 확인하세요."
+            type="password"
           ></input>
           <div>
             <p>{errors.passwordCheck?.message}</p>

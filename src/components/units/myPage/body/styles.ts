@@ -35,6 +35,8 @@ export const ProfileWrapper = styled.div`
     padding: 5px;
     border: 1px solid #3a6625;
     background-color: #fff;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #fff;
       background-color: #3a6625;
@@ -68,6 +70,8 @@ export const NameWrapper = styled.div`
     padding: 5px;
     border: 1px solid #3a6625;
     background-color: #fff;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #fff;
       background-color: #3a6625;
@@ -85,6 +89,8 @@ export const PasswordWrapper = styled.div`
   > p {
     font-size: 14px;
     color: #979797;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: #3a6625;
     }

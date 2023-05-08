@@ -33,6 +33,8 @@ export const ButtonWrapper = styled.div`
     border-radius: 5px;
     background-color: white;
     color: #3a6625;
+    cursor: pointer;
+    user-select: none;
     :hover {
       color: white;
       background-color: #3a6625;

@@ -10,7 +10,7 @@ export const useAuth = (): void => {
     (async () => {
       const accessToken = await getAccessToken();
       if (accessToken === undefined) {
-        onClickModal("로그인 후 이용 가능합니다.", "/community")();
+        onClickModal("로그인 후 이용 가능합니다.", "/communitys")();
       }
     })();
   }, []);
