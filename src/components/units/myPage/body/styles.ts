@@ -21,14 +21,23 @@ export const ProfileWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red;  */
   width: 200px;
+  > input {
+    display: none;
+  }
+  > img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   > div {
     width: 120px;
     height: 120px;
     margin-bottom: 20px;
     border-radius: 50%;
-    background-color: #979797;
+    background-color: #e2e2e2;
   }
   > button {
     width: 100px;
@@ -49,6 +58,7 @@ export const NameWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 10px;
   > div {
     > p {
       margin-top: 10px;

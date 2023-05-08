@@ -2,7 +2,6 @@ import * as M from "./styles";
 import { IProps } from "./types";
 
 export default function MyPageHeader(props: IProps): JSX.Element {
-  console.log(props.save === "pick");
   return (
     <M.Wrapper>
       <M.Title onClick={props.onClickSave("item")} save={props.save === "item"}>
