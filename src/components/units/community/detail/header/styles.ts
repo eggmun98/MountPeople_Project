@@ -28,15 +28,17 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 40px;
-  > div {
+  margin-top: 20px;
+  > p {
     width: 90%;
   }
-  > div:nth-of-type(2) {
+  > p:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 10%;
+    font-size: 12px;
+    color: #979797;
   }
 `;
 

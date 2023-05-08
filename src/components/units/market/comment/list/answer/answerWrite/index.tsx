@@ -30,7 +30,10 @@ export default function AnswerWrite(props: IProps): JSX.Element {
               </button>
             </A.ButtonWrapper>
           </A.TopWrapper>
-          <A.Input01 {...register("contents")}></A.Input01>
+          <A.Input01
+            {...register("contents")}
+            placeholder="내용을 입력하세요."
+          ></A.Input01>
         </form>
       </A.AnswerWrapper>
     </A.Wrapper>
