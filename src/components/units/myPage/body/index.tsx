@@ -15,7 +15,10 @@ export default function MyPageBody(props: IProps): JSX.Element {
         <div>
           <p>{props.data?.fetchUserLoggedIn.name}</p>
           <p>{props.data?.fetchUserLoggedIn.email}</p>
-          <p>{props.data?.fetchUserLoggedIn?.userPoint?.amount} P</p>
+          <p>
+            {props.data?.fetchUserLoggedIn?.userPoint?.amount.toLocaleString()}{" "}
+            P
+          </p>
         </div>
         <button onClick={onClickOpenModal("point")}>포인트 충전</button>
       </M.NameWrapper>

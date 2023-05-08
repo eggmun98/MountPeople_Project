@@ -24,7 +24,7 @@ export default function DetailHeader(props: IProps): JSX.Element {
           <p>{props.data?.fetchUseditem.seller?.name}</p>
         </D.TitleWrapper>
         <D.PriceWrapper>
-          <p>{props.data?.fetchUseditem.price}</p>
+          <p>{props.data?.fetchUseditem.price?.toLocaleString()}</p>
           <p>
             {props.data?.fetchUseditem.createdAt
               .slice(0, 10)
