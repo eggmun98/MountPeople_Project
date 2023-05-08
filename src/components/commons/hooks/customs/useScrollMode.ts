@@ -35,7 +35,7 @@ export const useScrollMode = (
 } => {
   const { fetchKey, data, fetchMore } = args;
   const onLoadMore = async (): Promise<void> => {
-    if (data === undefined) return;
+    if (data === undefined || fetchKey === undefined) return;
     await fetchMore({
       variables: {
         page: Math.ceil((data[fetchKey].length ?? 10) / 10) + 1,
@@ -46,6 +46,7 @@ export const useScrollMode = (
             [fetchKey]: [...prev[fetchKey]],
           };
         }
+
         return {
           [fetchKey]: [...prev[fetchKey], ...fetchMoreResult[fetchKey]],
         };
