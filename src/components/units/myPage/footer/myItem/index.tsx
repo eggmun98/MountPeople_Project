@@ -30,7 +30,7 @@ export default function MyItem(props: IProps): JSX.Element {
           <M.ContentsWrapper key={el._id}>
             <p>{1}</p>
             <p>{el.name}</p>
-            <p>{el.price}</p>
+            <p>{el.price?.toLocaleString()}</p>
             <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
           </M.ContentsWrapper>
         ))}
