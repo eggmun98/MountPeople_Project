@@ -15,8 +15,7 @@ export default function DetailFooter(props: IProps): JSX.Element {
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
   const router = useRouter();
-  console.log(props.data?.fetchUseditem.seller?._id);
-  console.log(data?.fetchUserLoggedIn._id);
+
   return (
     <D.Wrapper>
       {props.data?.fetchUseditem.seller?._id ===

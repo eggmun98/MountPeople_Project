@@ -15,11 +15,20 @@ export default function CommentWrite(): JSX.Element {
     <CW.Wrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CW.TopWrapper>
-          <input {...register("writer")}></input>
-          <input {...register("password")}></input>
+          <input
+            {...register("writer")}
+            placeholder="작성자를 입력하세요."
+          ></input>
+          <input
+            {...register("password")}
+            placeholder="비밀번호를 입력하세요."
+          ></input>
         </CW.TopWrapper>
         <CW.BottomWrapper>
-          <input {...register("contents")}></input>
+          <input
+            {...register("contents")}
+            placeholder="내용을 입력하세요."
+          ></input>
           <button>작성하기</button>
         </CW.BottomWrapper>
       </form>

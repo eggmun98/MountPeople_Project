@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { accessTokenState } from "../../stores";
 import { IData } from "../../../units/sign/signIn/types";
 import { selectionModalMode } from "./closeModalMode";
+import { FETCH_USER_LOGGED_IN } from "../query/useQueryFetchUsedLoggedIn";
 
 export const useLoginMode = (): {
   onClickLogin: (data: IData) => Promise<void>;
@@ -20,6 +21,11 @@ export const useLoginMode = (): {
           email: data.email,
           password: data.password,
         },
+        refetchQueries: [
+          {
+            query: FETCH_USER_LOGGED_IN,
+          },
+        ],
       });
       const accessToken = result.data?.loginUser.accessToken;
 
