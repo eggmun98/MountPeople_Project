@@ -16,7 +16,7 @@ export default function CommunityList(): JSX.Element {
   return (
     <Wrapper>
       <ListHeader onChangeSearchbar={onChangeSearchbar}></ListHeader>
-      <ListBody data={data}></ListBody>
+      <ListBody data={data} count={dataCount?.fetchBoardsCount ?? 0}></ListBody>
       <ListFooter dataCount={dataCount} refetch={refetch}></ListFooter>
     </Wrapper>
   );
