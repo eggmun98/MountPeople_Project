@@ -8,14 +8,12 @@ export default function DetailHeader(): JSX.Element {
   return (
     <D.Wrapper>
       <D.TitleWrapper>
-        <h1>{data?.fetchBoard.title}</h1>
-        <p>{data?.fetchBoard.writer}</p>
+        <h1>제목: {data?.fetchBoard.title}</h1>
+        <p>작성자: {data?.fetchBoard.writer}</p>
       </D.TitleWrapper>
       <D.ContentWrapper>
-        <div>{data?.fetchBoard.contents}</div>
-        <div>
-          {data?.fetchBoard.createdAt.slice(0, 10).replaceAll("-", ".")}
-        </div>
+        <p>내용: {data?.fetchBoard.contents}</p>
+        <p>{data?.fetchBoard.createdAt.slice(0, 10).replaceAll("-", ".")}</p>
       </D.ContentWrapper>
       {data?.fetchBoard.images
         ?.filter((el: string) => el)

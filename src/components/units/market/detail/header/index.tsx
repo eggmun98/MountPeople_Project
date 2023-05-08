@@ -20,11 +20,11 @@ export default function DetailHeader(props: IProps): JSX.Element {
       </D.MainImgWrapper>
       <D.ContentsWrapper>
         <D.TitleWrapper>
-          <h1>{props.data?.fetchUseditem.name}</h1>
-          <p>{props.data?.fetchUseditem.seller?.name}</p>
+          <h1>상품 명: {props.data?.fetchUseditem.name}</h1>
+          <p>판매자: {props.data?.fetchUseditem.seller?.name}</p>
         </D.TitleWrapper>
         <D.PriceWrapper>
-          <p>{props.data?.fetchUseditem.price?.toLocaleString()}</p>
+          <p>가격: {props.data?.fetchUseditem.price?.toLocaleString()}</p>
           <p>
             {props.data?.fetchUseditem.createdAt
               .slice(0, 10)
@@ -32,7 +32,7 @@ export default function DetailHeader(props: IProps): JSX.Element {
           </p>
         </D.PriceWrapper>
         <D.RemarksWrapper>
-          <p>{props.data?.fetchUseditem.remarks}</p>
+          <p>요약: {props.data?.fetchUseditem.remarks}</p>
           <div>
             <D.Heart onClick={onClickPick}></D.Heart>
             <p>{props.data?.fetchUseditem.pickedCount}</p>
