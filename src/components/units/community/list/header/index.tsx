@@ -6,7 +6,7 @@ export default function ListHeader(props: IProps): JSX.Element {
   return (
     <L.Wrapper>
       <L.ImgWrapper>
-        <h1>자유롭게 이야기를 나눠 보세요~</h1>
+        <h1>등산 커뮤니티 Mount People</h1>
       </L.ImgWrapper>
       <Searchbars01 onChangeSearchbar={props.onChangeSearchbar}></Searchbars01>
     </L.Wrapper>

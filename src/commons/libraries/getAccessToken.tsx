@@ -1,4 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
+import { selectionModalMode } from "../../components/commons/hooks/customs/closeModalMode";
 
 const RESTORE_ACCESS_TOKEN = gql`
   mutation {
@@ -17,7 +18,7 @@ interface IToken {
 export const getAccessToken = async (): Promise<string | undefined> => {
   try {
     const graphQLClient = new GraphQLClient(
-      "https://backend11.codebootcamp.co.kr/graphql06",
+      "https://backend-practice.codebootcamp.co.kr/graphql",
       {
         credentials: "include",
       }
@@ -27,6 +28,8 @@ export const getAccessToken = async (): Promise<string | undefined> => {
 
     return newAccessToken;
   } catch (error) {
-    if (error instanceof Error) console.log(error.message);
+    if (error instanceof Error) {
+      alert(error.message);
+    }
   }
 };

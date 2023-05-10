@@ -25,6 +25,8 @@ export const useUpdateBoardCommentMode = (): {
   const onClickUpdateComment =
     (boardCommentId: string) =>
     async (data: IData): Promise<void> => {
+      if (!data.password || !data.contents)
+        return onClickModal("빈칸을 채워주세요.")();
       try {
         await updateBoardComment({
           variables: {

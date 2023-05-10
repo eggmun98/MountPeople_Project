@@ -21,6 +21,7 @@ export const useUpdateAnswerMode = (): {
   const onClickUpdateAnswer =
     (useditemQuestionAnswerId: string, useditemQuestionId: string) =>
     async (data: { contents: string }) => {
+      if (!data.contents) return onClickModal("내용이 비었습니다.")();
       try {
         await updateUsedItemQuestionAnswer({
           variables: {

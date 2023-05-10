@@ -1,5 +1,4 @@
 import { ButtonWrapper, NumberWrapper, Wrapper } from "./styles";
-import { useQueryFetchBoarCount } from "../../../../commons/hooks/query/community/useQueryFetchBoardCount";
 import Paginations01 from "../../../../commons/paginations/01";
 import { IProps } from "./types";
 import { movePageMode } from "../../../../commons/hooks/customs/movePageMode";

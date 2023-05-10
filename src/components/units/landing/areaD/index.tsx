@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import * as A from "../styles";
 import { movePageMode } from "../../../commons/hooks/customs/movePageMode";
 import { IProps } from "./types";
 
 export default function AreaD(props: IProps): JSX.Element {
-  const router = useRouter();
   const { onClickMovePage } = movePageMode();
 
   return (

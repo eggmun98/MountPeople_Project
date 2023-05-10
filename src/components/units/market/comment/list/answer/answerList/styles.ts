@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  /* background-color: red;  */
 `;
 
 export const LeftWrapper = styled.div`

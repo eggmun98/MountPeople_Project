@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-interface IProps {
-  isActive: boolean;
-}
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;

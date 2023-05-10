@@ -13,13 +13,14 @@ export const useCreateAnswerMode = (): {
   const [createUsedItemQuestionAnswer] = useMutation(
     CREATE_USED_ITEM_QUESTION_ANSWER
   );
-  const [answerIndex, setAnswerIndex] = useRecoilState(answerIndexState);
+  const [_, setAnswerIndex] = useRecoilState(answerIndexState);
   const { onClickModal } = selectionModalMode();
 
   // 상품 답변 함수
   const onClickCreateAnswer =
     (useditemQuestionId: string) =>
     async (data: { contents: string }): Promise<void> => {
+      if (!data.contents) return onClickModal("내용이 비었습니다.")();
       try {
         await createUsedItemQuestionAnswer({
           variables: {

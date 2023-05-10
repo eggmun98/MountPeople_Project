@@ -6,7 +6,7 @@ export const selectionModalMode = (): {
   onClickClose: () => void;
   onClickModal: (str: string, link?: string) => () => void;
 } => {
-  const [_, setIsModal] = useRecoilState(isModalState);
+  const [isModal, setIsModal] = useRecoilState(isModalState);
   const [__, setIsMessages] = useRecoilState(messageState);
   const [links, setLinks] = useRecoilState(linkState);
   const router = useRouter();

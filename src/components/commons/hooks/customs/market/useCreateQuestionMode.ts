@@ -15,6 +15,7 @@ export const useCreateQuestionMode = (): {
   const onClickCreateQuestion = async (data: {
     contents: string;
   }): Promise<void> => {
+    if (!data.contents) return onClickModal("내용이 비었습니다.")();
     try {
       const result = await createUseditemQuestion({
         variables: {

@@ -32,7 +32,7 @@ export default function Uploads01(props: IProps): JSX.Element {
 
   return (
     <U.Wrapper>
-      {props.el !== "" ? (
+      {props.el ? (
         <U.Image
           src={"https:/storage.googleapis.com/" + props.imageUrls[props.index]}
           onClick={onClickImageNonoMode}
