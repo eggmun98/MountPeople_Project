@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { UPDATE_BOARD } from "../../mutation/community/useMutationUpdateBoard";
 import { useRecoilState } from "recoil";
@@ -17,23 +17,28 @@ export const useUpdateBoardMode = (): {
   const [address] = useRecoilState(addressState);
   const [imageUrls] = useRecoilState(imagesState);
   const { onClickModal } = selectionModalMode();
+  const { data } = useQuery(FETCH_BOARD, {
+    variables: {
+      boardId: router.query.page,
+    },
+  });
 
   // 게시글 수정 함수
-  const onClickUpdateButton = async (data: IData): Promise<void> => {
+  const onClickUpdateButton = async (formData: IData): Promise<void> => {
     try {
       const result = await updateBoard({
         variables: {
           boardId: router.query.page,
-          password: data.password,
+          password: formData.password,
           updateBoardInput: {
-            title: data.title,
-            contents: data.contents,
-            youtubeUrl: data.youtubeUrl,
+            title: formData.title,
+            contents: formData.contents,
+            youtubeUrl: formData.youtubeUrl,
             images: imageUrls,
             boardAddress: {
               zipcode,
               address,
-              addressDetail: data.addressDetail,
+              addressDetail: formData.addressDetail,
             },
           },
         },

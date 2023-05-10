@@ -31,7 +31,11 @@ export default function MarketWrite(props: IProps): JSX.Element {
           props.isEdit ? onClickUpdateProduct : onClickCreateProduct
         )}
       >
-        <WriteHeader register={register} data={data}></WriteHeader>
+        <WriteHeader
+          register={register}
+          data={data}
+          isEdit={props.isEdit}
+        ></WriteHeader>
         <WriteBody setValue={setValue} data={data}></WriteBody>
         <WriteFooter isEdit={props.isEdit}></WriteFooter>
       </form>
