@@ -24,6 +24,10 @@ export const useCreateProductMode = (): {
 
   // 상품 작성 함수
   const onClickCreateProduct = async (data: IData): Promise<void> => {
+    if (!data.name) return onClickModal("상품명을 입력해 주세요.")();
+    if (!data.price) return onClickModal("가격을 입력해 주세요.")();
+    if (!data.contents) return onClickModal("내용을 입력해 주세요.")();
+
     try {
       const result = await createUsedItem({
         variables: {
