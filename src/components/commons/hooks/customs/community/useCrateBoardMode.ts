@@ -16,6 +16,11 @@ export const useCreateBoardMode = (): {
 
   // 게시글 작성 함수
   const onClickCreateBoard = async (data: IData): Promise<void> => {
+    if (!data.writer) return onClickModal("작성자를 입력해 주세요.")();
+    if (!data.password) return onClickModal("비밀번호를 입력해 주세요.")();
+    if (!data.title) return onClickModal("제목을 입력해 주세요.")();
+    if (!data.contents) return onClickModal("내용을 입력해 주세요.")();
+
     try {
       const result = await createBoard({
         variables: {
