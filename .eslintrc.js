@@ -21,5 +21,6 @@ module.exports = {
     "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/array-type": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
   },
 };

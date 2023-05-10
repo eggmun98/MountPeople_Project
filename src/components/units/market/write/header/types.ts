@@ -12,4 +12,5 @@ export interface IData {
 export interface IProps {
   register: UseFormRegister<IData>;
   data: Pick<IQuery, "fetchUseditem"> | undefined;
+  isEdit: boolean;
 }

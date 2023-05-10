@@ -1,7 +1,4 @@
-import { useRouter } from "next/router";
 import * as L from "./styles";
-import { movePageMode } from "../../hooks/customs/movePageMode";
-import { useAllPageLink } from "../../hooks/customs/allPageLink";
 import { IProps } from "../types";
 
 export default function LayoutNavigation(props: IProps): JSX.Element {

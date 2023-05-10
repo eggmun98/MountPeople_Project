@@ -10,6 +10,7 @@ import { useQueryFetchBoard } from "../../../commons/hooks/query/community/useQu
 import { useUpdateBoardMode } from "../../../commons/hooks/customs/community/useUpdateBoardMode";
 import { useRecoilState } from "recoil";
 import { imagesState } from "../../../commons/stores";
+import { useEffect } from "react";
 
 export default function CommunityWrite(props: IProps): JSX.Element {
   const { register, handleSubmit } = useForm<IData>();
@@ -17,6 +18,13 @@ export default function CommunityWrite(props: IProps): JSX.Element {
   const { onClickUpdateButton } = useUpdateBoardMode();
   const { data } = useQueryFetchBoard();
   const [imageUrls, setImageUrls] = useRecoilState(imagesState);
+
+  useEffect(() => {
+    if (props.isEdit) {
+      const images = data?.fetchBoard.images;
+      if (images !== undefined && images !== null) setImageUrls([...images]);
+    }
+  }, [data]);
 
   return (
     <Wrapper>

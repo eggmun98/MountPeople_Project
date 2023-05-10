@@ -6,7 +6,7 @@ import { useCreateAnswerMode } from "../../../../../../commons/hooks/customs/mar
 import { IData, IProps } from "./types";
 
 export default function AnswerWrite(props: IProps): JSX.Element {
-  const [queAnswerIndex, setAnswerIndex] = useRecoilState(answerIndexState);
+  const [_, setAnswerIndex] = useRecoilState(answerIndexState);
   const { handleSubmit, register } = useForm<IData>();
   const { onClickCreateAnswer } = useCreateAnswerMode();
 

@@ -7,7 +7,6 @@ import Modal01 from "../modal/01";
 import { isModalState, isModalState02 } from "../stores";
 import { useRecoilState } from "recoil";
 import Modal02 from "../modal/02";
-import { useState } from "react";
 import { ILayoutProps } from "./types";
 
 const HIDDEN_PAGE = ["/sign/signIn/", "/sign/signUp/", "/"];

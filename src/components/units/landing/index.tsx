@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import AreaA from "./areaA";
 import AreaB from "./areaB";
 import AreaC from "./areaC";

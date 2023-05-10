@@ -3,9 +3,17 @@ import * as D from "./styles";
 import { IProps } from "./types";
 import { imagesState02 } from "../../../../commons/stores";
 import Uploads02 from "../../../../commons/uploads/02";
+import { useEffect } from "react";
 
 export default function WriteHeader(props: IProps): JSX.Element {
   const [imageUrls, setImageUrls] = useRecoilState(imagesState02);
+
+  useEffect(() => {
+    if (props.isEdit) {
+      const images = props.data?.fetchUseditem.images;
+      if (images !== undefined && images !== null) setImageUrls([...images]);
+    }
+  }, [props.data]);
 
   return (
     <D.Wrapper>
