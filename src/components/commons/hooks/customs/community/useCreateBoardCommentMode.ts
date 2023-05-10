@@ -26,6 +26,8 @@ export const useCreateBoardCommentMode = (): {
 
   // 게시글 댓글 등록 함수
   const onClickCreateCommentButton = async (data: IData): Promise<void> => {
+    if (!data.writer || !data.password || !data.contents)
+      return onClickModal("입력칸을 모두 채워주세요.")();
     try {
       await createBoardComment({
         variables: {

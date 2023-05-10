@@ -29,7 +29,7 @@ export default function MyPick(props: ISaveProps): JSX.Element {
           key={el._id}
           onClick={props.onClickMovePage(`/markets/market/${el._id}`)}
         >
-          <p>{10 - dex}</p>
+          <p>{dex + 1}</p>
           <p>{el.name}</p>
           <p>{el.price?.toLocaleString()}</p>
           <p>{el.createdAt.slice(0, 10).replaceAll("-", ".")}</p>

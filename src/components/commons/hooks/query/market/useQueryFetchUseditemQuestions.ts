@@ -1,9 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import {
-  IQuery,
-  IQueryFetchUseditemQuestionsArgs,
-} from "../../../../../commons/types/generated/types";
 
 export const FETCH_USED_ITEM_QUESTIONS = gql`
   query fetchUseditemQuestions($useditemId: ID!, $page: Int) {
@@ -21,10 +17,7 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
 
 export const useQueryFetchQuestion = (): typeof result => {
   const router = useRouter();
-  const result = useQuery<
-    Pick<IQuery, "fetchUseditemQuestions">,
-    IQueryFetchUseditemQuestionsArgs
-  >(FETCH_USED_ITEM_QUESTIONS, {
+  const result = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: {
       useditemId: String(router.query.page),
     },

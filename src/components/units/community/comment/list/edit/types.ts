@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
-import { IBoardComment } from "../../../../../../commons/types/generated/types";
 
 export interface IProps {
-  el: IBoardComment | undefined;
+  el: {
+    writer: string;
+    contents: string;
+    _id: string;
+  };
   setOriginIndex: Dispatch<SetStateAction<number>>;
 }
 

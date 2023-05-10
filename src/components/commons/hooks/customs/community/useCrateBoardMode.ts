@@ -39,10 +39,10 @@ export const useCreateBoardMode = (): {
           },
         ],
       });
-      // onClickModal(
-      //   "게시글을 작성하였습니다.",
-      //   `/communitys/community/${String(result?.data?.createBoard._id)}`
-      // )();
+      onClickModal(
+        "게시글을 작성하였습니다.",
+        `/communitys/community/${String(result?.data?.createBoard._id)}`
+      )();
     } catch (error) {
       if (error instanceof Error) onClickModal(error.message)();
     }

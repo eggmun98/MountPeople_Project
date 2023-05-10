@@ -8,7 +8,7 @@ export default function Paginations01(props: IProps): JSX.Element {
   const [startPage, setStartPage] = useState(1);
   const lastPage = Math.ceil((props.count ?? 0) / 10);
   const [activedPage, setActivedPage] = useState(1);
-  const [number, setNumber] = useRecoilState(numberState);
+  const [_, setNumber] = useRecoilState(numberState);
 
   const onClickPageButton = (event: React.MouseEvent): void => {
     const activedPage = Number(event.currentTarget.id);

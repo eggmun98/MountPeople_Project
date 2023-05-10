@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   @media (max-width: 767px) {
     flex-direction: column;
     height: 460px;
-    /* border: none; */
   }
 `;
 
