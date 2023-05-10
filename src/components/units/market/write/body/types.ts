@@ -1,4 +1,4 @@
-import { UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { UseFormSetValue } from "react-hook-form";
 import { IQuery } from "../../../../../commons/types/generated/types";
 
 export interface IData {

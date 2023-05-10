@@ -20,6 +20,7 @@ export const useUpdateQuestionMode = (): {
   const onClickUpdateQuestion =
     (useditemQuestionId: string) =>
     async (data: { contents: string }): Promise<void> => {
+      if (!data.contents) return onClickModal("내용이 비었습니다.")();
       try {
         await updateUsedItem({
           variables: {

@@ -1,6 +1,5 @@
 import { useQueryFetchBoard } from "../../../../commons/hooks/query/community/useQueryFetchBoard";
 import * as D from "./styles";
-import ReactPlayer from "react-player";
 
 export default function DetailHeader(): JSX.Element {
   const { data } = useQueryFetchBoard();
