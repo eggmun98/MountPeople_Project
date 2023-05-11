@@ -1,6 +1,6 @@
 # MountPeople
 
-배포 주소: **[https://eggmun.site/communitys/](https://eggmun.site/communitys/)**
+배포 주소: **[https://eggmun.site](https://eggmun.site)**
 
 <br>
 
