@@ -15,9 +15,7 @@ export default function ListFooter(props: IProps): JSX.Element {
         ></Paginations01>
       </NumberWrapper>
       <ButtonWrapper>
-        <button onClick={onClickMovePage("/communitys/new")}>
-          게시글 작성하기
-        </button>
+        <button onClick={onClickMovePage("/communitys/new")}>작성하기</button>
       </ButtonWrapper>
     </Wrapper>
   );

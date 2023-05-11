@@ -79,8 +79,15 @@ export const YoutubeWrapper = styled.div`
   padding: 0 20%;
   overflow: hidden;
 
+  @media (max-width: 1023px) {
+    height: 250px;
+    padding: 0 10%;
+  }
+
   @media (max-width: 767px) {
     margin-top: 20px;
+    height: 200px;
+    padding: 0 5%;
   }
 `;
 
