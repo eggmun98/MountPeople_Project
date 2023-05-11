@@ -1,10 +1,10 @@
-## MountPeople <!-- 타이틀 옆에 로고 사진 나두기 -->
+## MountPeople
 
 배포 주소: **[https://eggmun.site/communitys/](https://eggmun.site/communitys/)**
 <br>
 프로젝트 기간: 23.04 ~ 23.05
 
-<br><hr></br>
+<hr></br>
 
 ### 기획 의도
 
