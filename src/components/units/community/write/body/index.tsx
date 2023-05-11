@@ -5,16 +5,11 @@ import { IAddress, IProps } from "./types";
 import { Modal } from "antd";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import { useState } from "react";
-import { useMapCreationMode } from "../../../../commons/hooks/customs/useMapCreationMode";
 
 export default function WriteBody(props: IProps): JSX.Element {
-  const { mapCreation, isOpen } = useMapCreationMode();
-
   const [zipcode, setZipcode] = useRecoilState<string>(zipCodeState);
   const [address, setAddress] = useRecoilState<string>(addressState);
   const [isModal, setIsModal] = useState<boolean>(false);
-
-  mapCreation();
 
   const handleComplete = (data: IAddress): void => {
     addressShowModal();
