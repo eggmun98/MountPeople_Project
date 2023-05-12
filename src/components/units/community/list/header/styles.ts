@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
 export const ImgWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -20,11 +20,18 @@ export const ImgWrapper = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  > h1 {
+  > h1:first-of-type {
     text-align: center;
     font-size: 50px;
-    font-family: "suite01";
+    font-family: "suite0101";
     font-weight: 400;
+    color: white;
+  }
+  > h1:last-of-type {
+    text-align: center;
+    font-size: 50px;
+    font-family: "mont01";
+    font-weight: 600;
     color: white;
   }
 `;
