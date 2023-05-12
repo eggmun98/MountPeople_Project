@@ -21,6 +21,8 @@ export default function WriteBody(props: IProps): JSX.Element {
     setIsModal((prev) => !prev);
   };
 
+  const onChange = (): void => {}; // 리액트에서 input 태그 사용시 onchange 사용 권장해서 만듬
+
   return (
     <W.OutWrapper>
       <W.Wrapper>
@@ -32,6 +34,7 @@ export default function WriteBody(props: IProps): JSX.Element {
                 : props.data?.fetchBoard.boardAddress?.zipcode ?? ""
             }
             placeholder="0 0 0 0 0 0"
+            onChange={onChange}
           ></input>
           <button type="button" onClick={addressShowModal}>
             등록
@@ -45,6 +48,7 @@ export default function WriteBody(props: IProps): JSX.Element {
                 : props.data?.fetchBoard?.boardAddress?.address ?? ""
             }
             placeholder="주소를 등록하세요."
+            onChange={onChange}
           ></input>
         </W.InputWrapper01>
         <W.InputWrapper01>
@@ -54,6 +58,7 @@ export default function WriteBody(props: IProps): JSX.Element {
               props.data?.fetchBoard.boardAddress?.addressDetail ?? ""
             )}
             placeholder="상세 주소를 입력하세요."
+            onChange={onChange}
           ></input>
         </W.InputWrapper01>
         {isModal && (

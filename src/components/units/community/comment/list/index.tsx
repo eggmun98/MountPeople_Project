@@ -48,7 +48,7 @@ export default function CommentList(): JSX.Element {
               setOriginIndex={setOriginIndex}
             ></CommentEdit>
           )
-        )}
+        ) ?? <div></div>}
       </InfiniteScroll>
     </CL.Wrapper>
   );

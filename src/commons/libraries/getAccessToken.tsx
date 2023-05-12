@@ -29,7 +29,7 @@ export const getAccessToken = async (): Promise<string | undefined> => {
     return newAccessToken;
   } catch (error) {
     if (error instanceof Error) {
-      return "";
+      console.log(error.message);
     }
   }
 };

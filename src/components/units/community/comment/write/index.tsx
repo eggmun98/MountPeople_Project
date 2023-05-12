@@ -22,6 +22,7 @@ export default function CommentWrite(): JSX.Element {
           <input
             {...register("password")}
             placeholder="비밀번호를 입력하세요."
+            type="password"
           ></input>
         </CW.TopWrapper>
         <CW.BottomWrapper>
@@ -29,7 +30,7 @@ export default function CommentWrite(): JSX.Element {
             {...register("contents")}
             placeholder="내용을 입력하세요."
           ></input>
-          <button>작성하기</button>
+          <button>등록</button>
         </CW.BottomWrapper>
       </form>
     </CW.Wrapper>

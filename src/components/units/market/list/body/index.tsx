@@ -39,7 +39,7 @@ export default function ListBody(): JSX.Element {
               <p>{el.price ? el.price.toLocaleString() : 0}원</p>
             </L.TextWrapper>
           </L.ProductWrapper>
-        ))}
+        )) ?? <div></div>}
       </L.ListWrapper>
     </L.Wrapper>
   );
