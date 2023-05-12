@@ -63,7 +63,7 @@ export default function MarketList(): JSX.Element {
               setOriginIndex={setOriginIndex}
             ></CommentEdit>
           )
-        )}
+        ) ?? <div></div>}
       </InfiniteScroll>
     </ML.Wrapper>
   );

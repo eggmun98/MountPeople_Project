@@ -19,7 +19,7 @@ export default function MarketWrite(): JSX.Element {
             {...register("contents")}
             placeholder="내용을 입력하세요."
           ></input>
-          <button>작성하기</button>
+          <button>등록</button>
         </MW.BottomWrapper>
       </form>
     </MW.Wrapper>
