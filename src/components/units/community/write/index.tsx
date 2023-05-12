@@ -13,7 +13,7 @@ import { imagesState } from "../../../commons/stores";
 import { useEffect } from "react";
 
 export default function CommunityWrite(props: IProps): JSX.Element {
-  const { register, handleSubmit } = useForm<IData>();
+  const { register, handleSubmit, setValue } = useForm<IData>();
   const { onClickCreateBoard } = useCreateBoardMode();
   const { onClickUpdateButton } = useUpdateBoardMode();
   const { data } = useQueryFetchBoard();
