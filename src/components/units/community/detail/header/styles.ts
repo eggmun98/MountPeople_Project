@@ -19,8 +19,19 @@ export const TitleWrapper = styled.div`
   > h1 {
     font-size: 24px;
   }
-  > p {
-    font-size: 14px;
+
+  > div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    > p {
+      font-size: 14px;
+    }
+    > p:last-of-type {
+      width: 10%;
+      font-size: 12px;
+      color: #979797;
+    }
   }
 `;
 
@@ -31,14 +42,6 @@ export const ContentWrapper = styled.div`
   margin-top: 20px;
   > p {
     width: 90%;
-  }
-  > p:nth-of-type(2) {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 10%;
-    font-size: 12px;
-    color: #979797;
   }
 `;
 
