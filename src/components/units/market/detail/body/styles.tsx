@@ -11,7 +11,7 @@ export const ImgWrapper = styled.div`
     width: 100%;
     height: 300px;
     margin-top: 40px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @media (max-width: 1023px) {
