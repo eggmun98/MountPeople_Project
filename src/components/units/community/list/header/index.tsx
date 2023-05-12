@@ -6,7 +6,8 @@ export default function ListHeader(props: IProps): JSX.Element {
   return (
     <L.Wrapper>
       <L.ImgWrapper>
-        <h1>등산 커뮤니티 Mount People</h1>
+        <h1>등산 커뮤니티 </h1>
+        <h1>&nbsp;Mount People</h1>
       </L.ImgWrapper>
       <Searchbars01 onChangeSearchbar={props.onChangeSearchbar}></Searchbars01>
     </L.Wrapper>
