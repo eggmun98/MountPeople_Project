@@ -27,7 +27,7 @@ export const MainImgWrapper = styled.div`
 export const ImgWrapper = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const HiddenWrapper = styled.div`
@@ -111,6 +111,8 @@ export const RemarksWrapper = styled.div`
 export const Heart = styled(AiFillHeart)`
   font-size: 30px;
   color: #3a6625;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const TagWrapper = styled.div`
