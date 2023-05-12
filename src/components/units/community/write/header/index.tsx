@@ -16,6 +16,7 @@ export default function WriteHeader(props: IProps): JSX.Element {
         <input
           {...props.register("password")}
           placeholder="비밀번호를 입력하세요."
+          type="password"
         ></input>
       </W.WriteWrapper>
       <W.InputWrapper01>
