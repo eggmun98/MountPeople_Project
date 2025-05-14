@@ -1,7 +1,5 @@
 # MountPeople
 
-배포 주소: **[https://eggmun.site](https://eggmun.site)**
-
 <br>
 
 ## 기획 의도
